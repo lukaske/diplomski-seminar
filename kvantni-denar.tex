@@ -10,6 +10,8 @@
 \usepackage{caption}
 \usepackage[utf8]{inputenc}
 \newtheorem*{remark}{Izrek o prepovedi kloniranja}
+\newtheorem{postulat}{Postulat}
+
 \usepackage[slovene]{babel}
 \usepackage{booktabs}
 \setcounter{tocdepth}{2} % Show sections
@@ -55,9 +57,6 @@
  \newpage
  
  \tableofcontents
- \listoffigures
- \listoftables
-
 
  \newpage
   
@@ -67,7 +66,7 @@
 
 \subsection{Aktualne rešitve}
 	
-\par Zanimivo, nas pri plačevanju s kartico težave ponarejanja denarja očitno ne pestijo, saj se vse dogaja znotraj bančnega sistema, kjer avtentičnost denarja pred vstopom vanj preverijo. Vendar pa morajo biti tudi bančne kartice na nek način zaščitene pred neavtoriziranim kopiranjem. Vsaka kartica namreč vsebuje polprevodniški mikročip in sistem simetrične kriptografije - torej uporabljajo isti ključ za šifriranje in dešifriranje \cite{CS101IntroductionComputing}. Na čipu je shranjena kopija šifrirnega ključa, ki ob vsaki transakciji zakodira unikatno sporočilo (npr. dovolj dolg naključni niz ali današnjo časovno oznako, angl. timestamp), ki ga nato pošlje na banko, kjer hranijo kopijo šifrirnega ključa. Banka sporočilo dešifrira in s tem potrdi avtentičnost transakcije. Bistvo te sheme je, da šifrirni ključ polprevodniškega čipa nikoli ne zapusti, ampak s t.i. reševanjem unikatnih izzivov (šifriranjem nizov) banki dokazuje, da šifrirni ključ pozna \cite{CS101IntroductionComputing}. Ker je ključ shranjen znotraj izjemno majhnega kosa polprevodnika, je branje le-tega izjemno zahtevno \cite{christopheDescramblingDataReading2006} in zato za povprečnega ponarejevalca pretežko.
+\par Zanimivo je, da nas pri plačevanju s kartico težave ponarejanja denarja očitno ne pestijo, saj se vse dogaja znotraj bančnega sistema, kjer avtentičnost denarja pred vstopom vanj preverijo. Vendar pa morajo biti tudi bančne kartice na nek način zaščitene pred neavtoriziranim kopiranjem. Vsaka kartica namreč vsebuje polprevodniški mikročip in sistem simetrične kriptografije - torej uporabljajo isti ključ za šifriranje in dešifriranje \cite{CS101IntroductionComputing}. Na čipu je shranjena kopija šifrirnega ključa, ki ob vsaki transakciji zakodira unikatno sporočilo (npr. dovolj dolg naključni niz ali današnjo časovno oznako, angl. timestamp), ki ga nato pošlje na banko, kjer hranijo kopijo šifrirnega ključa. Banka sporočilo dešifrira in s tem potrdi avtentičnost transakcije. Bistvo te sheme je, da šifrirni ključ polprevodniškega čipa nikoli ne zapusti, ampak s t.i. reševanjem unikatnih izzivov (šifriranjem nizov) banki dokazuje, da šifrirni ključ pozna \cite{CS101IntroductionComputing}. Ker je ključ shranjen znotraj izjemno majhnega kosa polprevodnika, je branje le-tega izjemno zahtevno \cite{christopheDescramblingDataReading2006} in zato za povprečnega ponarejevalca pretežko.
 \par
 V teoriji bi lahko vsak bankovec opremili s takšnim polprevodniškim elementom in tako potrjevali avtentičnost. Vendar je to po eni strani potratno, po drugi pa nas kvantna mehanika lahko pripelje še bližje tudi teoretično varnemu sistemu. 
 
@@ -78,6 +77,33 @@ Leta 1983 je Stephen Wiesner objavil članek v katerem predlaga shemo t.i. "Kvan
 \section{Kvantna informacijska teorija}
 \par Ker se Wiesnerjeva shema naslanja na poglavja iz kvantne informacijske teorije (npr. Izrek o prepovedi kloniranja), moramo za globlje razumevanje na tej ravni v nadaljevanju razložiti še nekaj idej s področja kvantne mehanike.
 
+\subsection{Lastnosti kvantnih sistemov}
+
+V klasični fiziki lastnosti sistema obstajajo neodvisno od meritve in so del realnosti. Meritev te lastnosti le razkrije. V kvantni mehaniki pa vektor stanja določa le verjetnosti, da bomo pri meritvi dobili določen rezultat. Dva delca, ki sta na začetku opisana z enakim vektorjem stanja, lahko ob isti meritvi vrneta dva različna rezultata. Kvantno mehaniko lahko razumemo kot matematično ogrodje za razvoj fizikalnih teorij, ki smo ga izoblikovali na podlagi več deset let fizikalnih eksperimentov in ugibanja, kako se obnaša narava na skali atomov in podatomskih delcev. Osnovni postulati kvantne mehanike tako predstavljajo povezavo med fizičnim svetom in matematičnim formalizmom.
+
+\begin{postulat}
+Kvantno stanje je element Hilbertovega prostora.
+\end{postulat}
+
+\begin{postulat}
+V kvantni mehaniki opazljivkam ustrezajo hermitski operatorji.
+\end{postulat}
+
+\begin{postulat}
+(Bornovo pravilo) Pri meritvi opazljivke $A$ v stanju $| \psi \rangle$ bomo dobili rezultat $\lambda_j$ z verjetnostjo $p_j = | \langle j | \psi \rangle |^2$.
+\end{postulat}
+
+\begin{postulat}
+(Kolaps valovne funkcije) Če pri meritvi opazljivke $A = \sum_i \, \lambda_i \, | i \rangle \, \langle i |$ izmerimo vrednost $\lambda_i$, potem je takoj po meritvi sistem v lastnem stanju $| i \rangle$.
+\end{postulat}
+
+\begin{postulat}
+Časovno spreminjanje kvantnega stanja opišemo z unitarnim operatorjem.
+\end{postulat}
+S tem smo postavili osnove matematičnega formalizma, s katerim bomo delali v nadaljevanju. \cite{zitkoKvantneRacunalniskeTehnologije2017}
+
+
+
 \subsection{Kubit}
 \label{kubit} 
 
@@ -87,7 +113,7 @@ Leta 1983 je Stephen Wiesner objavil članek v katerem predlaga shemo t.i. "Kvan
 | \psi \rangle = \alpha \, | 0 \rangle + \beta \, | 1 \rangle,
 \end{equation}
 %
-kjer velja $\alpha$, $\beta \in \mathbb{C}$, $|\alpha|^2 + |\beta|^2 = 1$ in $| \psi \rangle$ normirana valovna funkcija. Zapis lahko dodatno poenostavimo, da velja $| 0 \rangle = [1,0]^T$ in $| 1 \rangle = [0,1]^T$, s čimer zapis kubita prevedemo na $| \psi \rangle = [c_0, c_1]^T$.  Kubit zavzame stanje $| 0 \rangle$ ali $| 1 \rangle$ šele ob meritvi, in sicer z verjetnostjo $|\alpha|^2$ oz. $|\beta|^2$. Stanje, ko je $|\alpha|^2 = 0.5$ in $|\beta|^2 = 0.5$ včasih označimo tudi z $| + \rangle$ za pozitivno predznačen $\beta$ in $| - \rangle$ za negativno predznačen $\beta$. \cite{nielsenQuantumComputationQuantum2012} \par Ker je valovna funkcija normirana in velja $|\alpha|^2 + |\beta|^2 = 1$, lahko $| \psi \rangle$ brez izgube splošnosti zapišemo tudi kot:
+kjer velja $\alpha$, $\beta \in \mathbb{C}$, $|\alpha|^2 + |\beta|^2 = 1$ in $| \psi \rangle$ normirana valovna funkcija. Zapis lahko dodatno poenostavimo, da velja $| 0 \rangle = [1,0]^T$ in $| 1 \rangle = [0,1]^T$, s čimer zapis kubita prevedemo na $| \psi \rangle = [\alpha, \beta]^T$.  Kubit zavzame stanje $| 0 \rangle$ ali $| 1 \rangle$ šele ob meritvi, in sicer z verjetnostjo $|\alpha|^2$ oz. $|\beta|^2$. Stanje, ko je $|\alpha|^2 = 0.5$ in $|\beta|^2 = 0.5$ včasih označimo tudi z $| + \rangle$ za pozitivno predznačen $\beta$ in $| - \rangle$ za negativno predznačen $\beta$. \cite{nielsenQuantumComputationQuantum2012} \par Ker je valovna funkcija normirana in velja $|\alpha|^2 + |\beta|^2 = 1$, lahko $| \psi \rangle$ brez izgube splošnosti zapišemo tudi kot:
 \begin{equation}
 \label{blocheq}
 | \psi \rangle = \cos{\frac{\theta}{2}} \, | 0 \rangle + e^{i \varphi} \sin{\frac{\theta}{2}} \, | 1 \rangle,
@@ -119,7 +145,7 @@ Poljubnega stanja dveh ali več kubitov v splošnem \emph{ne} moremo zapisati v 
 \par Sistem z $n$ kubiti ima $2^n$ možnih stanj, torej je stanje le-tega superpozicija $2^n$ lastnih stanj oziroma ima vektor stanja $2^n$ komponent. Ko izmerimo stanje sistema, kolapsiramo superpozicijo in izmerimo le eno od $2^n$ možnih stanj s točno določeno verjetnostjo. \cite{pompeKvantniAlgoritmi2022}
 
 \subsubsection{Bellova stanja (pari EPR)}
-Štiri specifična dvokubitna stanja imenujemo Bellova stanja. Za ta stanja je značilno, da so med seboj maksimalno prepletena in hkrati tvorijo bazo štiri-dimenzijskega Hilbertovega prostora za dva kubita. Štiri Bellova stanja so:
+Štiri specifična dvokubitna stanja imenujemo Bellova stanja. Ta stanja so maksimalno prepletena. Med seboj so ortogonalna in tvorijo bazo štiridimenzionalnega Hilbertovega prostora za dva kubita. Štiri Bellova stanja so:
 \begin{equation}
 |\Phi ^{+}\rangle ={\frac  {1}{{\sqrt  {2}}}}(|0\rangle _{A}\otimes |0\rangle _{B}+|1\rangle _{A}\otimes |1\rangle _{B}) \\
 \end{equation}
@@ -136,7 +162,7 @@ Rezultat meritve enega samega kubita v enem izmed Bellovih stanj je naključen, 
 
 \subsection{Polarizacija svetlobe}
 
-Primer preprostega dvonivojskega kvantnega sistema je polarizacija svetlobe oz. fotonov. Za opis polarizacije svetlobe si lahko v optiki pomagamo z Jonesovim vektorjem in Jonesovim računom \cite{JonesCalculus2023}, kjer kompleksno amplitudo $\vec{E}$ našega elektromagnetnega opišemo kot
+Primer preprostega dvonivojskega kvantnega sistema je polarizacija svetlobe oz. fotonov. Za opis polarizacije svetlobe si lahko v optiki pomagamo z Jonesovim vektorjem in Jonesovim računom \cite{JonesCalculus2023}, kjer kompleksno amplitudo $\vec{E}$ elektromagnetnega valovanja opišemo kot
 
 \begin{equation}
 {\displaystyle \vec{E}(t) = {\begin{pmatrix}E_{x}(t)\\E_{y}(t)\\0\end{pmatrix}}={\begin{pmatrix}E_{0x}e^{i(kz-\omega t+\phi _{x})}\\E_{0y}e^{i(kz-\omega t+\phi _{y})}\\0\end{pmatrix}}={\begin{pmatrix}E_{0x}e^{i\phi _{x}}\\E_{0y}e^{i\phi _{y}}\\0\end{pmatrix}}e^{i(kz-\omega t)}.}
@@ -146,18 +172,26 @@ Jonesov vektor je tedaj definiran v ravnini $xy$ kot
 \begin{equation}
 {\displaystyle {\begin{pmatrix}E_{0x}e^{i\phi _{x}}\\E_{0y}e^{i\phi _{y}}\end{pmatrix}}.}
 \end{equation} 
-V Tabeli \ref{tab:pol} navedemo različne vrste polarizacije svetlobe, zaenkrat še klasično. Vendar je mogoče z reinterpretacijo Maxwellovih enačb elektrodinamike in kvantizacijo gostote energije ugotoviti, da so Jonesov vektor in računi povezani z njim  uporabni tudi za opis stanj posameznega fotona v kvantnem smislu \cite{PhotonPolarization2022}. S pomočjo korespondenčnega načela zapišemo
+V Tabeli \ref{tab:pol} navedemo različne vrste polarizacije svetlobe, zaenkrat še klasično. Vendar je mogoče z reinterpretacijo Maxwellovih enačb elektrodinamike in kvantizacijo gostote energije ugotoviti, da so Jonesov vektor in računi povezani z njim  uporabni tudi za opis stanj posameznega fotona v kvantnem smislu \cite{PhotonPolarization2022}. Za klasičen sinusni ravni val, ki potuje v smeri $z$, je gostota vrtilne količine $\mathcal{L}$ enaka kar 
 \begin{equation}
-    {N \hbar \omega \over V} = \mathcal{E}_c = \frac{\mid \vec{E} \mid^2}{8\pi}, \end{equation}
+ \boldsymbol { \mathcal{L} } = \mathbf{r} \times \boldsymbol { \mathcal{P} },
+\end{equation}
+kjer je $\mathbf{r}$ oddaljenost od osi $z$ in $\boldsymbol{\mathcal{P}}$ Poyntingov vektor. Z uvedbo kompleksnega vektorja elektromagnetnega polja $ \mathbf{F} = \sqrt{\frac{\epsilon_0}{2}} (\mathbf{E} + ic \mathbf{B}) $ in uporabo Fourierove transformacije (glej \cite{bialynicki-birulaCanonicalSeparationAngular2011}) lahko pridelamo izraz za gostoto spinske vrtilne količine ravnga vala, ki potuje v smeri $z$. Dobimo
+\begin{equation}
+{\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
+\end{equation}
+kjer je $\mathcal{E}_c$ gostota energije, $\omega$ krožna frekvenca valovanja, $\psi_R$ in $\psi_L$ pa sta normirana deleža leve in desne polarizacije, da velja ${\displaystyle 1=|\psi _{\rm {R}}|^{2}+|\psi _{\rm {L}}|^{2}}$. Do kvantnomehanskega izraza pridemo s pomočjo korespondenčnega načela. Zapišemo
+\begin{equation}
+    {N \hbar \omega \over V} = \mathcal{E}_c = \frac{ \epsilon_0 | \vec{E} |^2}{2}, \end{equation}
 kjer je $\vec{E}$ jakost električnega polja, $\mathcal{E}_c$ gostota energije, $N$ število fotonov, $V$ volumen in $\omega$ krožna frekvenca valovanja. Pričakovano spinsko vrtilno količino $\mathcal {L}$ lahko tedaj izpeljemo kot
 \begin{equation}
 {\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)={N\hbar  \over V}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
 \end{equation}
-iz česar sledi, da je spinska vrtilna količina fotona $l_{z}$ enaka 
+kjer je $| \psi \rangle = \psi_R \, | R \rangle + \psi_L \, |L \rangle$ valovna funkcija fotona. Funkciji $| R \rangle$ in $| L \rangle$ pa sta definirani kot v Tabeli \ref{tab:pol}.  Sledi, da je spinska vrtilna količina fotona $l_{z}$ enaka 
 \begin{equation}
 {\displaystyle l_{z}=\hbar \left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right).}
 \end{equation}
-\par Iz rezultata interpretiramo, da ima vsak foton verjetnost $\mid \psi _{\rm {R}}\mid ^{2}$ za spinsko vrtilno količino enako $\hbar$ in verjetnost $\mid \psi _{\rm {L}}\mid ^{2}$ za spinsko vrtilno količino $- \hbar$. Foton je linearno polariziran takrat, ko je v superpoziciji stanj z enakim deležem "levo" in "desno" polariziranih stanj (tj. $ l_z = 0$). \cite{PhotonPolarization2022}
+Iz rezultata interpretiramo, da ima vsak foton verjetnost $\mid \psi _{\rm {R}}\mid ^{2}$ za spinsko vrtilno količino enako $\hbar$ in verjetnost $\mid \psi _{\rm {L}}\mid ^{2}$ za spinsko vrtilno količino $- \hbar$. Foton je linearno polariziran takrat, ko je v superpoziciji stanj z enakim deležem "levo" in "desno" polariziranih stanj (tj. $ l_z = 0$). \cite{PhotonPolarization2022}
 
 \begin{table}[]
 \centering
@@ -177,7 +211,7 @@ Levo                  & $ {\frac  {1}{{\sqrt  2}}}{(1, +i)^T} $ & $ { |L\rangle 
 
 \subsection{Razločljivost neortognalnih stanj}
 
-Eno izmed poglavitnih vprašanj v kvantni mehaniki (in ozadje mnogih kvantnih tehnologij) je problem razločljivosti ne ortogonalnih stanj. Delajmo se, da za trenutek lahko razločimo med poljubnimi kvantnimi stanji. Imamo znan kriptografski par Alice in Bob, ki si delita par prepletenih kubitov (npr. fotonov) v stanju $ ( | 00 \rangle + | 11 \rangle ) / \sqrt{2}$. Če Alice izvede meritev v računski bazi (ena izmed možnih baz), je rezultat meritve $| 00 \rangle$ z verjetnostjo $1/2$ ali $| 11 \rangle$ z verjetnostjo $1/2$. Tedaj je Bobov sistem (ki je daleč stran od Alice) v stanju $| 0 \rangle $ z verjetnostjo $1/2$, ali $| 1 \rangle $ z verjetnostjo $1/2$. Lahko pa bi Alice kubit izmerila tudi v bazi $| + \rangle$ in $| - \rangle$. Z malo računanja ugotovimo (mešani členi se namreč odštejejo), da lahko začetno prepleteno stanje v novi bazi zapišemo kot $ ( | ++ \rangle + | -- \rangle ) / \sqrt{2} $. Po meritvi je Bobov sistem   v stanju $| + \rangle $ z verjetnostjo $1/2$ ali $| - \rangle $ z verjetnostjo $1/2$. Sledi, da če bi Bob imel napravo, ki razlikuje med stanji valovne funkcije  $| 0 \rangle$, $| 1 \rangle$, $|+ \rangle$ ali $| - \rangle$, bi lahko ugotovil v kateri izmed dveh baz je merila Alice. Še več, to bi lahko ugotovil natanko ob izvedbi meritve meritvi, tudi če je Alice daleč stran. To bi pomenilo, da lahko informacija o izbiri baze potuje s hitrostjo večjo od hitrosti svetlobe. Iz teorije relativnosti vemo, da to ruši kavzalnost in je v nasprotju z do sedaj znanimi fizikalnimi zakoni. Iz te ugotovitve sledi, da v kvantni mehaniki ni mogoče razločiti med ne ortogonalnimi stanji. \cite{nielsenQuantumComputationQuantum2012}  
+Eno izmed poglavitnih vprašanj v kvantni mehaniki (in ozadje mnogih kvantnih tehnologij) je problem razločljivosti neortogonalnih stanj. Pretvarjajmo se za trenutek, da lahko razločimo med poljubnimi kvantnimi stanji. Imamo znan kriptografski par Alice in Bob, ki si delita par prepletenih kubitov (npr. fotonov) v stanju $ ( | 00 \rangle + | 11 \rangle ) / \sqrt{2}$. Če Alice izvede meritev v računski bazi (ena izmed možnih baz), skupna valovna funkcija (saj sta delca prepletena) kolapsira v stanje $| 00 \rangle$ z verjetnostjo $1/2$ ali stanje $| 11 \rangle$ z verjetnostjo $1/2$. Zaradi kolapsa valovne funkcije bo tedaj tudi Bob (ki je daleč stran od Alice) izmeril enako vrednost kot ona, in sicer $ 0 $ z verjetnostjo $1/2$ ali $ 1 $ z verjetnostjo $1/2$. Lahko pa bi Alice kubit izmerila tudi v bazi $| + \rangle$ in $| - \rangle$. Z malo računanja ugotovimo (mešani členi se namreč odštejejo), da lahko začetno prepleteno stanje v novi bazi zapišemo kot $ ( | ++ \rangle + | -- \rangle ) / \sqrt{2} $. Po meritvi je Bobov sistem   v stanju $| + \rangle $ z verjetnostjo $1/2$ ali $| - \rangle $ z verjetnostjo $1/2$. Sledi, da če bi Bob imel napravo, ki razlikuje med stanji valovne funkcije  $| 0 \rangle$, $| 1 \rangle$, $|+ \rangle$ ali $| - \rangle$, bi lahko ugotovil, v kateri izmed dveh baz je merila Alice. Še več, to bi lahko ugotovil natanko ob izvedbi meritvi, tudi če je Alice daleč stran. To bi pomenilo, da lahko informacija o izbiri baze potuje s hitrostjo večjo od hitrosti svetlobe. Iz teorije relativnosti vemo, da to ruši kavzalnost in je v nasprotju z do sedaj znanimi fizikalnimi zakoni. Iz te ugotovitve sledi, da v kvantni mehaniki ni mogoče razločiti med neortogonalnimi stanji. \cite{nielsenQuantumComputationQuantum2012}  
  
  \section{Izrek o prepovedi kloniranja}
    Zdaj že vemo, da informacija zaradi teorije relativnosti (in ohranitve kavzalnosti) ne more potovati hitreje kot svetloba. Kljub temu je leta 1982 Nick Herbert v reviji Foundations of Physics objavil članek z naslovom \emph{FLASH—A superluminal communicator based upon a new kind of quantum measurement}, kjer predlaga shemo naprave, ki naj bi omogočala komunikacijo hitrejšo od hitrosti svetlobe \cite{herbertFLASHSuperluminalCommunicator1982}. Da ima članek napako, so slutili tako recenzenti kot najverjetneje tudi Herbert sam. Vendar so objavo članka vseeno omogočili, saj nihče od njih napake ni znal poiskati, njen izvor pa bi najverjetneje pripeljal do odkritja nove fizike \cite{peresHowNocloningTheorem2003}. Na srečo so kmalu po izidu članka napako našli \cite{woottersSingleQuantumCannot1982} in, kot napovedano, ob enem odkrili tudi izrek o prepovedi kloniranja za kvantne sisteme.
@@ -189,9 +223,9 @@ V prvem koraku rigorozno pokažemo, da je obstoj superluminalne komunikacije nem
 \begin{equation}
 p = \frac{mv}{\sqrt{1-\frac{v^2}{c^2}}},
 \end{equation}
-kjer je $p$ gibalna količina delca. Ko se hitrost $v$ bliža $c$, gibalna količina $p$ limitira proti neskončnosti. Ker smo s količino energije omejeni, masnih delcev ne moremo pospešiti do svetlobne hitrosti in naprej. Na voljo nam ostanejo fotoni in drugi brez masni delci. Zato se na tej točki raje bolj splošno vprašamo, kaj bi se zgodilo s kavzalnostjo, če bi lahko informacije prenašali s hitrostjo večjo od hitrosti svetlobe. \cite{marcocerezoEntangledParticlesFaster2015}
+kjer je $p$ gibalna količina delca. Ko se hitrost $v$ bliža $c$, gibalna količina $p$ limitira proti neskončnosti. Ker smo s količino energije omejeni, masnih delcev ne moremo pospešiti do svetlobne hitrosti in naprej. Na voljo nam ostanejo fotoni in drugi brezmasni delci. Zato se na tej točki raje bolj splošno vprašamo, kaj bi se zgodilo s kavzalnostjo, če bi lahko informacije prenašali s hitrostjo večjo od hitrosti svetlobe. \cite{marcocerezoEntangledParticlesFaster2015}
 \par
-Na diagramu Minkowskega na Sliki \ref{fig:minkowski} zopet nastopa znan kriptografski par Alice in Bob. Tokrat sta Alice in Bob vsak na svojem planetu, kjer je planet $A$ je od planeta $B$ oddaljen za razdaljo $d$. Alice in Bob si izmenjujeta signale. Z zeleno črtkano črto je na Sliki \ref{fig:minkowski} prikazan svetlobni signal. Če je superluminalna komunikacija mogoča, lahko Alice s hitrejšim signalom A (vijolična črta) Boba opozori, da bo prejel svetlobni signal. Še več, ker je hitrost signala sedaj hitrejša od hitrosti svetlobe, lahko Alice pošlje signal B, ki ga Bob prejme še preden ga Alice sploh pošlje! Bob se na signal B odzove s signalom C, ki ga Alice prejme še pred pošiljanjem signala B. Tako smo s superluminalno komunikacijo iznašli komuniciranje v preteklost. Alice lahko npr. opozori sebe na nekaj, kar bo storila v prihodnosti, kar nas pripelje v paradokse in poruši kavzalnost (vzročnost dogodkov). \cite{marcocerezoEntangledParticlesFaster2015}
+Na diagramu Minkowskega na Sliki \ref{fig:minkowski} zopet nastopa znan kriptografski par Alice in Bob. Tokrat sta Alice in Bob vsak na svojem planetu, kjer je planet $A$ od planeta $B$ oddaljen za razdaljo $d$. Alice in Bob si izmenjujeta signale. Z zeleno črtkano črto je na Sliki \ref{fig:minkowski} prikazan svetlobni signal. Če je superluminalna komunikacija mogoča, lahko Alice s hitrejšim signalom A (vijolična črta) Boba opozori, da bo prejel svetlobni signal. Še več, ker je hitrost signala sedaj hitrejša od hitrosti svetlobe, lahko Alice pošlje signal B, ki ga Bob prejme še preden ga Alice sploh pošlje! Bob se na signal B odzove s signalom C, ki ga Alice prejme še pred pošiljanjem signala B. Tako smo s superluminalno komunikacijo iznašli komuniciranje v preteklost. Alice lahko npr. opozori sebe na nekaj, kar bo storila v prihodnosti, kar nas pripelje v paradokse in poruši kavzalnost (vzročnost dogodkov). \cite{marcocerezoEntangledParticlesFaster2015}
 \begin{figure}[H]
 \includegraphics[width=12cm]{special-relativity.png}
 \centering
@@ -211,7 +245,7 @@ Velja, da je dogodek A (oddaja signala) vzrok dogodka B (prejem signala). Za opa
  & =\frac{1-av/c^{2}}{\sqrt{1-v^{2}/c^{2}}}\Delta t.
 \end{split}
 \end{equation}
-Precej preprosto lahko pokažemo, da lahko za vrednosti $a > c$ izberemo tak $v$, da ima koeficient pred $\Delta t$ negativen predznak. To se zgodi že, če uporabimo $a = c^2$ in $v = 2 \, \frac{m}{s^2}$. Z drugimi besedami - v tem inercialnem sistemu se je dogodek B zgodil še pred dogodkom A. Einstein je leta 1907 zaključil, da, čeprav v tem izrazu ne vidi nobene logične kontradikcije, je takšen rezultat kontradiktoren vsem našim izkušnjam iz realnega življenja. To pa v dovoljšnji meri dokazuje, da je primer, ko je je $a > c$, nemogoč. \cite{TachyonicAntitelephone2022a}
+Precej preprosto lahko pokažemo, da lahko za vrednosti $a > c$ izberemo tak $v$, da ima koeficient pred $\Delta t$ negativen predznak. To se zgodi že, če uporabimo $a = c^2 / (1 \, \frac{\text{m}}{\text{s}}) $ in $v = 2 \, \frac{\text{m}}{\text{s}}$. Z drugimi besedami - v tem inercialnem sistemu se je dogodek B zgodil še pred dogodkom A. Einstein je leta 1907 zaključil, da, čeprav v tem izrazu ne vidi nobene logične kontradikcije, je takšen rezultat kontradiktoren vsem našim izkušnjam iz realnega življenja. To pa v dovoljšnji meri dokazuje, da je primer, ko je $a > c$, nemogoč. \cite{TachyonicAntitelephone2022a}
 
 \subsubsection{Komunikator FLASH}
 
@@ -223,7 +257,7 @@ Precej preprosto lahko pokažemo, da lahko za vrednosti $a > c$ izberemo tak $v$
 \caption{Originalna shema komunikatorja FLASH. \cite{herbertFLASHSuperluminalCommunicator1982}}
 \label{fig:flash}
 \end{figure}
-\par Par prepletenih fotonov ustvarimo v dvofotonskem izviru ("Two-photon source") in jih pošljemo v smeri dveh opazovalcev, npr. Alice in Bob. Stanje dveh fotnov je podano v rotacijsko invariantnem stanju
+\par Par prepletenih fotonov ustvarimo v dvofotonskem izviru in jih pošljemo v smeri dveh opazovalcev, npr. Alice in Bob. Stanje dveh fotnov je podano v rotacijsko invariantnem stanju
 \begin{equation}
 \frac{| HH \rangle + | VV \rangle}{\sqrt{2}},
 \end{equation}
@@ -231,7 +265,7 @@ kjer sta $H$ in $V$ horizontalna in vertikalna polarizacija. Enako prepleteno st
 \begin{equation}
 \frac{| RR \rangle + | LL \rangle}{\sqrt{2}},
 \end{equation}
-kjer sta $R$ in $L$ desna in leva polarizacija. Ko Alice prejme svoj foton, mu lahko izmeri eno izmed dveh polarizacij, tj. linearno ali krožno. Tedaj bo tudi Bobov foton kolapsiral v linearno ali krožno polarizacijo. Bob svoj foton pred meritvijo pošlje v lasersko pomnoževalko ("Laser Gain Tube"), ki iz $n$ fotonov naredi $4n$ enako polariziranih fotonov. Bob razdeli fotonski curek na 4 dele po $n$ fotonov in izmeri polarizacije $H$, $V$, $R$ in $L$. Rezultati meritev so tedaj kot v Tabeli \ref{tab:bob}. Vse kar mora Bob sedaj storiti je pogledati kateri izmed njegovih detektorjev je detektiral 0 fotonov in s tem izve, v kateri bazi je merila Alice. S tem v trenutku meritve (torej instantno) prejme 1 bit informacije. Po drugi strani pa smo že prej pokazali, da takšna instantna komunikacija ni možna. Kje se torej skriva napaka te sheme? \cite{marcocerezoEntangledParticlesFaster2015}
+kjer sta $R$ in $L$ desna in leva polarizacija. Ko Alice prejme svoj foton, mu lahko izmeri eno izmed dveh polarizacij, tj. linearno ali krožno. Tedaj bo tudi Bobov foton kolapsiral v linearno ali krožno polarizacijo. Bob svoj foton pred meritvijo pošlje v lasersko pomnoževalko ("Laser Gain Tube"), ki iz $n$ fotonov naredi $4n$ enako polariziranih fotonov. Bob razdeli fotonski curek na 4 dele po $n$ fotonov in izmeri polarizacije $H$, $V$, $R$ in $L$. Rezultati meritev so tedaj kot v Tabeli \ref{tab:bob}. Vse kar mora Bob sedaj storiti, je pogledati kateri izmed njegovih detektorjev je detektiral 0 fotonov. S tem izve, v kateri bazi je merila Alice. S tem v trenutku meritve (torej hipno) prejme 1 bit informacije. Po drugi strani pa smo že prej pokazali, da takšna hipna komunikacija ni možna. Kje se torej skriva napaka te sheme? \cite{marcocerezoEntangledParticlesFaster2015}
 \par
 Ob objavi Herbertovega članka je bilo dobro znano, da imajo izhodni fotoni iz laserske fotopomnoževalke enako polarizacijo kot vhodni. Vendar pa je Herbert spregledal, da lahko stanje npr. $| H \rangle$ zapišemo kot superpozicijo stanj $| R \rangle$ in $| L \rangle$:
 \begin{equation}
@@ -291,7 +325,7 @@ Rezultata enačimo in dobimo
 \begin{equation}
  \langle \psi, \varphi \rangle = \left( \langle \psi, \varphi \rangle \right)^2.
 \end{equation}
-Vidimo, da imamo enačbo oblike $x = x^2$, ki ima le dve rešitvi. In sicer, $x = 0$ ter $x = 1$. Rezultat si interpretiramo takole: Če bi takšna naprava lahko uspešno klonirala vsaj dve valovni funkciji $| \psi \rangle$ in $| \varphi \rangle$, tedaj mora veljati, da je $ | \psi \rangle = | \varphi \rangle$ ali pa sta valovni funkciji $| \psi \rangle$ in $| \varphi \rangle$ ortogonalni. Iz teoretičnega rezultata zaključimo, da naprave za popolno kloniranje poljubnih neznanih kvantnih sistemov ni mogoče ustvariti.
+Vidimo, da imamo enačbo oblike $x = x^2$, ki ima le dve rešitvi, $x = 0$ in $x = 1$. Rezultat si interpretiramo takole: če bi takšna naprava lahko uspešno klonirala vsaj dve valovni funkciji $| \psi \rangle$ in $| \varphi \rangle$, tedaj mora veljati, da je $ | \psi \rangle = | \varphi \rangle$ ali pa sta valovni funkciji $| \psi \rangle$ in $| \varphi \rangle$ ortogonalni. Iz teoretičnega rezultata zaključimo, da naprave za popolno kloniranje poljubnih neznanih kvantnih sistemov ni mogoče ustvariti.
 \end{proof}
  
 \section{Kvantni denar} 
@@ -316,7 +350,7 @@ Shemo kvantnega denarja je leta 1983 v svojem članku konceptualno opisal Stephe
 \begin{figure}[H]
 \includegraphics[width=6cm]{bloch.png}
 \centering
-\caption{Blochova sfera. V zmeri $z$ sta definirani stanji $| 0 \rangle$ in $| 1 \rangle$. \cite{BlochSphere2023}}
+\caption{Blochova sfera. V smeri $z$ sta definirani stanji $| 0 \rangle$ in $| 1 \rangle$. \cite{BlochSphere2023}}
 \label{fig:bloch}
 \end{figure}
 
@@ -327,12 +361,12 @@ V smeri $z$ definiramo stanji $| 0 \rangle$ in $| 1 \rangle$, ki predstavljata n
 {\displaystyle {\begin{aligned}\psi _{x+}&={\frac {1}{\sqrt {2\,}}}{\begin{bmatrix}1\\1\end{bmatrix}}\;,&\psi _{x-}&={\frac {1}{\sqrt {2\,}}}{\begin{bmatrix}1\\-1\end{bmatrix}}\;,\\\psi _{y+}&={\frac {1}{\sqrt {2\,}}}{\begin{bmatrix}1\\i\end{bmatrix}}\;,&\psi _{y-}&={\frac {1}{\sqrt {2\,}}}{\begin{bmatrix}1\\-i\end{bmatrix}}\;,\\\psi _{z+}&={\begin{bmatrix}1\\0\end{bmatrix}}\;,&\psi _{z-}&={\begin{bmatrix}0\\1\end{bmatrix}}~.\end{aligned}}}
 \end{equation}
 
-\par Če torej naš kvantni sistem pripravimo v stanju $\psi_{x+}$ in merimo v smeri $x$, izmerimo lastno vrednost $+1$. V kolikor merimo ta isti sistem v smeri $z$ ali $y$, izmerimo lastno vrednost $+1$ z verjetnostjo $1/2$ in $-1$ z verjetnostjo $1/2$. Z drugimi besedami: Ob meritvi dobimo enoličen rezultat le, če merimo v smeri lastnega vektorja valovne funkcije, torej moramo valovno funkcijo že od začetka poznati. 
+\par Če torej naš kvantni sistem pripravimo v stanju $\psi_{x+}$ in merimo v smeri $x$, izmerimo lastno vrednost $+1$. V kolikor merimo ta isti sistem v smeri $z$ ali $y$, izmerimo lastno vrednost $+1$ z verjetnostjo $1/2$ in $-1$ z verjetnostjo $1/2$. Z drugimi besedami: ob meritvi dobimo enoličen rezultat le, če merimo v smeri lastnega vektorja valovne funkcije, torej moramo valovno funkcijo že od začetka poznati. 
 
 \subsection{Pomanjkljivosti in ranljivosti}
 
-Ena izmed poglavitnih težav Wiesnerjeve sheme kvantnega denarja je odvisnost od banke za preverjanje avtentičnosti bankovca. Banka mora biti vključena pri vsaki izmenjavi bankovca, saj bi z razkritjem skrivnih ključev na bankovcih padla celotna varnostna shema. Dodatno, sta 2 pomanjkljivosti relativno velika dolžina skrivnih ključev in ranljivost na interaktivne napade. V \cite{brodutchAdaptiveAttackWiesner2016} so leta 2016 pokazali, da lahko samo z večkratno verifikacijo istega bankovca in metodo, ki bazira na Elitzur–Vaidman bombnem testu, uspešno ponaredijo bankovec. Kot edina rešitev se tukaj pokaže ponovna izdaja bankovca ob vsaki verifikaciji (in s tem povezano večanje velikosti skrivnega ključa).
-\par Zadnji 2 napaki se da odpraviti, še vedno pa ostaja prva. Zato je glavni cilj nadaljnjih raziskav razvoj protokola t.i. kvantnega denarja z uporabo javnih ključev. Analogno s klasično simetrično kriptografijo, originalna Wiesnerjeva shema ustreza kvantnemu denarju z zasebnim ključem, saj lahko avtentičnost preveri le banka. Kvantni denar z javnim ključem pa bi analogno asimetrični klasični kriptografiji omogočal verifikacijo vsakomur. Ena izmed poglavitnih težav te nadgrajene sheme izvira že iz kvantnega denarja z zasebnimi ključi. Z večkratnim verificiranjem lahko ponarejevalec pridobi dodatne informacije o stanju kvantnega sistema, ki ga želi klonirati. V članku \cite{aaronsonQuantumMoneyHidden2012} avtorji predlagajo sistem kvantnega denarja z zasebnim ključem, ki omogoča neomejeno verifikacij in še vedno ostaja varen, kot tudi nov varen sistem kvantnega denarja z javnim ključem. Tu gre omeniti, da v kriptografiji poznamo 2 vrsti varnosti. Prva je informacijsko-teoretična varnost, kjer napadalec v teoriji nima na voljo dovolj informacij, da bi sistem lahko ogrozil. Takšna je originalna Wiegnerjeva shema. Drugi tip varnosti pa je računsko-teoretična varnost, kjer napadalec nima dovolj računske moči, da bi lahko v doglednem času sistem ogrozil. Tako je zavarovana npr. klasična asimetrična kriptografija, Bitcoin itd. Prej omenjeni članek \cite{aaronsonQuantumMoneyHidden2012} težavo z javnim kvantnim denarjem reši tako, da informacijsko varno shemo pretvori v računsko-teoretično varno. 
+Ena izmed poglavitnih težav Wiesnerjeve sheme kvantnega denarja je odvisnost od banke za preverjanje avtentičnosti bankovca. Banka mora biti vključena pri vsaki izmenjavi bankovca, saj bi z razkritjem skrivnih ključev na bankovcih padla celotna varnostna shema. Obstajata še dve pomanjkljivosti: relativno velika dolžina skrivnih ključev in ranljivost na interaktivne napade. V \cite{brodutchAdaptiveAttackWiesner2016} so leta 2016 pokazali, da lahko samo z večkratno verifikacijo istega bankovca in metodo, ki bazira na kvantnem preizkuševanju (test za bombe Elitzurja in Vaidmana), uspešno ponaredijo bankovec. Kot edina rešitev se tukaj pokaže ponovna izdaja bankovca ob vsaki verifikaciji (in s tem povezano večanje velikosti skrivnega ključa).
+\par Zadnji napaki se da odpraviti, še vedno pa ostaja prva. Zato je glavni cilj nadaljnjih raziskav razvoj protokola t.i. kvantnega denarja z uporabo javnih ključev. Analogno s klasično simetrično kriptografijo, originalna Wiesnerjeva shema ustreza kvantnemu denarju z zasebnim ključem, saj lahko avtentičnost preveri le banka. Kvantni denar z javnim ključem pa bi analogno asimetrični klasični kriptografiji omogočal verifikacijo vsakomur. Ena izmed poglavitnih težav te nadgrajene sheme izvira že iz kvantnega denarja z zasebnimi ključi. Z večkratnim verificiranjem lahko ponarejevalec pridobi dodatne informacije o stanju kvantnega sistema, ki ga želi klonirati. V članku \cite{aaronsonQuantumMoneyHidden2012} avtorji predlagajo sistem kvantnega denarja z zasebnim ključem, ki omogoča neomejeno verifikacij in še vedno ostaja varen, kot tudi nov varen sistem kvantnega denarja z javnim ključem. Tu gre omeniti, da v kriptografiji poznamo 2 vrsti varnosti. Prva je informacijsko-teoretična varnost, kjer napadalec v teoriji nima na voljo dovolj informacij, da bi sistem lahko ogrozil. Takšna je originalna Wiegnerjeva shema. Drugi tip varnosti pa je računsko-teoretična varnost, kjer napadalec nima dovolj računske moči, da bi lahko v doglednem času sistem ogrozil. Tako je zavarovana npr. klasična asimetrična kriptografija, Bitcoin itd. Prej omenjeni članek \cite{aaronsonQuantumMoneyHidden2012} težavo z javnim kvantnim denarjem reši tako, da informacijsko varno shemo pretvori v računsko-teoretično varno. 
 
 \pagebreak
 
