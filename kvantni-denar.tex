@@ -144,22 +144,6 @@ kjer smo na primer stanje $ | 0 \rangle_a \otimes | 1 \rangle_b $ zapisali kot $
 Poljubnega stanja dveh ali več kubitov v splošnem \emph{ne} moremo zapisati v produktni bazi kot $ | \Psi \rangle_{ab} = | \psi \rangle_a \, |\phi \rangle_b$. Torej za dane koeficiente $c_{00}$, $c_{01}$, $c_{10}$ in $c_{11}$ ne moremo določiti koeficientov $c_{a0}$, $c_{a1}$, $c_{b0}$ in $c_{b1}$. Takšnemu stanju pravimo, da je \emph{prepleteno}. \cite{pompeKvantniAlgoritmi2022}
 \par Sistem z $n$ kubiti ima $2^n$ možnih stanj, torej je stanje le-tega superpozicija $2^n$ lastnih stanj oziroma ima vektor stanja $2^n$ komponent. Ko izmerimo stanje sistema, kolapsiramo superpozicijo in izmerimo le eno od $2^n$ možnih stanj s točno določeno verjetnostjo. \cite{pompeKvantniAlgoritmi2022}
 
-\subsubsection{Bellova stanja (pari EPR)}
-Štiri specifična dvokubitna stanja imenujemo Bellova stanja. Ta stanja so maksimalno prepletena. Med seboj so ortogonalna in tvorijo bazo štiridimenzionalnega Hilbertovega prostora za dva kubita. Štiri Bellova stanja so:
-\begin{equation}
-|\Phi ^{+}\rangle ={\frac  {1}{{\sqrt  {2}}}}(|0\rangle _{A}\otimes |0\rangle _{B}+|1\rangle _{A}\otimes |1\rangle _{B}) \\
-\end{equation}
-\begin{equation}
-|\Phi ^{-}\rangle ={\frac  {1}{{\sqrt  {2}}}}(|0\rangle _{A}\otimes |0\rangle _{B}-|1\rangle _{A}\otimes |1\rangle _{B})
-\end{equation}
-\begin{equation}
-|\Psi ^{+}\rangle ={\frac  {1}{{\sqrt  {2}}}}(|0\rangle _{A}\otimes |1\rangle _{B}+|1\rangle _{A}\otimes |0\rangle _{B})
-\end{equation}
-\begin{equation}
-{\displaystyle |\Psi ^{-}\rangle ={\frac {1}{\sqrt {2}}}(|0\rangle _{A}\otimes |1\rangle _{B}-|1\rangle _{A}\otimes |0\rangle _{B})}.
-\end{equation}
-Rezultat meritve enega samega kubita v enem izmed Bellovih stanj je naključen, vendar z meritvijo prvega kubita določimo tudi stanje, ki ga bomo izmerili pri drugi meritvi. Velja, da bo druga meritev enaka prvi za stanja $\Phi$ ali nasprotna prvemu za stanja $\Psi$. To opažanje implicira, da sta rezultata meritev prvega in drugega kubita korelirana. Stanja se imenujejo Bellova, saj je John Bell prvi pokazal, da tako močne korelacije znotraj klasične fizike niso mogoče in da gre za pojave, ki jih lahko opazimo samo v svetu kvantne mehanike. \cite{BellState2023}
-
 \subsection{Polarizacija svetlobe}
 
 Primer preprostega dvonivojskega kvantnega sistema je polarizacija svetlobe oz. fotonov. Za opis polarizacije svetlobe si lahko v optiki pomagamo z Jonesovim vektorjem in Jonesovim računom \cite{JonesCalculus2023}, kjer kompleksno amplitudo $\vec{E}$ elektromagnetnega valovanja opišemo kot
@@ -167,11 +151,7 @@ Primer preprostega dvonivojskega kvantnega sistema je polarizacija svetlobe oz. 
 \begin{equation}
 {\displaystyle \vec{E}(t) = {\begin{pmatrix}E_{x}(t)\\E_{y}(t)\\0\end{pmatrix}}={\begin{pmatrix}E_{0x}e^{i(kz-\omega t+\phi _{x})}\\E_{0y}e^{i(kz-\omega t+\phi _{y})}\\0\end{pmatrix}}={\begin{pmatrix}E_{0x}e^{i\phi _{x}}\\E_{0y}e^{i\phi _{y}}\\0\end{pmatrix}}e^{i(kz-\omega t)}.}
 \end{equation}  
-Jonesov vektor je tedaj definiran v ravnini $xy$ kot
-
-\begin{equation}
-{\displaystyle {\begin{pmatrix}E_{0x}e^{i\phi _{x}}\\E_{0y}e^{i\phi _{y}}\end{pmatrix}}.}
-\end{equation} 
+Jonesov vektor je tedaj definiran v ravnini $xy$ kot $ [ E_{0x}e^{i\phi _{x}}, E_{0y}e^{i\phi _{y}}]^T. $
 
 \begin{table}[h]
 \centering
@@ -188,29 +168,6 @@ Levo                  & $ {\frac  {1}{{\sqrt  2}}}{(1, +i)^T} $ & $ { |L\rangle 
 \caption{Tipi polarizacij in pripadajoči Jonesov vektor. Dodatno označena tudi tipična ket notacija. \cite{JonesCalculus2023} }
 \label{tab:pol}
 \end{table}
-
-
-V Tabeli \ref{tab:pol} navedemo različne vrste polarizacije svetlobe, zaenkrat še klasično. Vendar je mogoče z reinterpretacijo Maxwellovih enačb elektrodinamike in kvantizacijo gostote energije ugotoviti, da so Jonesov vektor in računi povezani z njim  uporabni tudi za opis stanj posameznega fotona v kvantnem smislu \cite{PhotonPolarization2022}. Za klasičen sinusni ravni val, ki potuje v smeri $z$, je gostota vrtilne količine $\mathcal{L}$ enaka kar 
-\begin{equation}
- \boldsymbol { \mathcal{L} } = \mathbf{r} \times \boldsymbol { \mathcal{P} },
-\end{equation}
-kjer je $\mathbf{r}$ oddaljenost od osi $z$ in $\boldsymbol{\mathcal{P}}$ Poyntingov vektor. Z uvedbo kompleksnega vektorja elektromagnetnega polja $ \mathbf{F} = \sqrt{\frac{\epsilon_0}{2}} (\mathbf{E} + ic \mathbf{B}) $ in uporabo Fourierove transformacije (glej \cite{bialynicki-birulaCanonicalSeparationAngular2011}) lahko pridelamo izraz za gostoto spinske vrtilne količine ravnga vala, ki potuje v smeri $z$. Dobimo
-\begin{equation}
-{\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
-\end{equation}
-kjer je $\mathcal{E}_c$ gostota energije, $\omega$ krožna frekvenca valovanja, $\psi_R$ in $\psi_L$ pa sta normirana deleža leve in desne polarizacije, da velja ${\displaystyle 1=|\psi _{\rm {R}}|^{2}+|\psi _{\rm {L}}|^{2}}$. Do kvantnomehanskega izraza pridemo s pomočjo korespondenčnega načela. Zapišemo
-\begin{equation}
-    {N \hbar \omega \over V} = \mathcal{E}_c = \frac{ \epsilon_0 | \mathbf{E} |^2}{2}, \end{equation}
-kjer je $\vec{E}$ jakost električnega polja, $\mathcal{E}_c$ gostota energije, $N$ število fotonov, $V$ volumen in $\omega$ krožna frekvenca valovanja. Pričakovano spinsko vrtilno količino $\mathcal {L}$ lahko tedaj izpeljemo kot
-\begin{equation}
-{\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)={N\hbar  \over V}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
-\end{equation}
-kjer je $| \psi \rangle = \psi_R \, | R \rangle + \psi_L \, |L \rangle$ valovna funkcija fotona. Funkciji $| R \rangle$ in $| L \rangle$ pa sta definirani kot v Tabeli \ref{tab:pol}.  Sledi, da je spinska vrtilna količina fotona $l_{z}$ enaka 
-\begin{equation}
-{\displaystyle l_{z}=\hbar \left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right).}
-\end{equation}
-Iz rezultata interpretiramo, da ima vsak foton verjetnost $\mid \psi _{\rm {R}}\mid ^{2}$ za spinsko vrtilno količino enako $\hbar$ in verjetnost $\mid \psi _{\rm {L}}\mid ^{2}$ za spinsko vrtilno količino $- \hbar$. Foton je linearno polariziran takrat, ko je v superpoziciji stanj z enakim deležem "levo" in "desno" polariziranih stanj (tj. $ l_z = 0$). \cite{PhotonPolarization2022}
-
 
 \subsection{Razločljivost neortognalnih stanj}
 
@@ -229,7 +186,7 @@ p = \frac{mv}{\sqrt{1-\frac{v^2}{c^2}}},
 kjer je $p$ gibalna količina delca. Ko se hitrost $v$ bliža $c$, gibalna količina $p$ limitira proti neskončnosti. Ker smo s količino energije omejeni, masnih delcev ne moremo pospešiti do svetlobne hitrosti in naprej. Na voljo nam ostanejo fotoni in drugi brezmasni delci. Zato se na tej točki raje bolj splošno vprašamo, kaj bi se zgodilo s kavzalnostjo, če bi lahko informacije prenašali s hitrostjo večjo od hitrosti svetlobe. \cite{marcocerezoEntangledParticlesFaster2015}
 \par
 Na diagramu Minkowskega na Sliki \ref{fig:minkowski} zopet nastopa znan kriptografski par Alice in Bob. Tokrat sta Alice in Bob vsak na svojem planetu, kjer je planet $A$ od planeta $B$ oddaljen za razdaljo $d$. Alice in Bob si izmenjujeta signale. Z zeleno črtkano črto je na Sliki \ref{fig:minkowski} prikazan svetlobni signal. Če je superluminalna komunikacija mogoča, lahko Alice s hitrejšim signalom A (vijolična črta) Boba opozori, da bo prejel svetlobni signal. Še več, ker je hitrost signala sedaj hitrejša od hitrosti svetlobe, lahko Alice pošlje signal B, ki ga Bob prejme še preden ga Alice sploh pošlje! Bob se na signal B odzove s signalom C, ki ga Alice prejme še pred pošiljanjem signala B. Tako smo s superluminalno komunikacijo iznašli komuniciranje v preteklost. Alice lahko npr. opozori sebe na nekaj, kar bo storila v prihodnosti, kar nas pripelje v paradokse in poruši kavzalnost (vzročnost dogodkov). \cite{marcocerezoEntangledParticlesFaster2015}
-\begin{figure}[H]
+\begin{figure}[h]
 \includegraphics[width=12cm]{special-relativity.png}
 \centering
 \caption{Diagram Minkowskega. Diagram prikazuje komunikacijo med Alice in Bobom. Čas po vertikalni osi, razdalja po horizontalni. \cite{marcocerezoEntanglementHowIt2015}}
@@ -254,7 +211,7 @@ Precej preprosto lahko pokažemo, da lahko za vrednosti $a > c$ izberemo tak $v$
 
 \par Nick Herbert je leta 1982 predlagal shemo superluminalnega komunikatorja FLASH (Slika \ref{fig:flash}), katerega osnova je prepleten par fotonov (EPR par). Za komunikacijo uporablja dejstvo, da ima meritev enega izmed prepletenih fotonov takojšnji učinek na drugega.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \includegraphics[width=12cm]{flash.jpg}
 \centering
 \caption{Originalna shema komunikatorja FLASH. \cite{herbertFLASHSuperluminalCommunicator1982}}
@@ -369,20 +326,18 @@ V smeri $z$ definiramo stanji $| 0 \rangle$ in $| 1 \rangle$, ki predstavljata n
 \subsection{Pomanjkljivosti in ranljivosti}
 
 Ena izmed poglavitnih težav Wiesnerjeve sheme kvantnega denarja je odvisnost od banke za preverjanje avtentičnosti bankovca. Banka mora biti vključena pri vsaki izmenjavi bankovca, saj bi z razkritjem skrivnih ključev na bankovcih padla celotna varnostna shema. Obstajata še dve pomanjkljivosti: relativno velika dolžina skrivnih ključev in ranljivost na interaktivne napade. V \cite{brodutchAdaptiveAttackWiesner2016} so leta 2016 pokazali, da lahko samo z večkratno verifikacijo istega bankovca in metodo, ki bazira na kvantnem preizkuševanju (test za bombe Elitzurja in Vaidmana), uspešno ponaredijo bankovec. Kot edina rešitev se tukaj pokaže ponovna izdaja bankovca ob vsaki verifikaciji (in s tem povezano večanje velikosti skrivnega ključa).
-\par Zadnji napaki se da odpraviti, še vedno pa ostaja prva. Zato je glavni cilj nadaljnjih raziskav razvoj protokola t.i. kvantnega denarja z uporabo javnih ključev. Analogno s klasično simetrično kriptografijo, originalna Wiesnerjeva shema ustreza kvantnemu denarju z zasebnim ključem, saj lahko avtentičnost preveri le banka. Kvantni denar z javnim ključem pa bi analogno asimetrični klasični kriptografiji omogočal verifikacijo vsakomur. Ena izmed poglavitnih težav te nadgrajene sheme izvira že iz kvantnega denarja z zasebnimi ključi. Z večkratnim verificiranjem lahko ponarejevalec pridobi dodatne informacije o stanju kvantnega sistema, ki ga želi klonirati. V članku \cite{aaronsonQuantumMoneyHidden2012} avtorji predlagajo sistem kvantnega denarja z zasebnim ključem, ki omogoča neomejeno verifikacij in še vedno ostaja varen, kot tudi nov varen sistem kvantnega denarja z javnim ključem. Tu gre omeniti, da v kriptografiji poznamo 2 vrsti varnosti. Prva je informacijsko-teoretična varnost, kjer napadalec v teoriji nima na voljo dovolj informacij, da bi sistem lahko ogrozil. Takšna je originalna Wiegnerjeva shema. Drugi tip varnosti pa je računsko-teoretična varnost, kjer napadalec nima dovolj računske moči, da bi lahko v doglednem času sistem ogrozil. Tako je zavarovana npr. klasična asimetrična kriptografija, Bitcoin itd. Prej omenjeni članek \cite{aaronsonQuantumMoneyHidden2012} težavo z javnim kvantnim denarjem reši tako, da informacijsko varno shemo pretvori v računsko-teoretično varno. 
-
-\pagebreak
+\par Zadnji napaki se da odpraviti, še vedno pa ostaja prva. Zato je glavni cilj nadaljnjih raziskav razvoj protokola t.i. kvantnega denarja z uporabo javnih ključev. Analogno s klasično simetrično kriptografijo, originalna Wiesnerjeva shema ustreza kvantnemu denarju z zasebnim ključem, saj lahko avtentičnost preveri le banka. Kvantni denar z javnim ključem pa bi analogno asimetrični klasični kriptografiji omogočal verifikacijo vsakomur. Ena izmed poglavitnih težav te nadgrajene sheme izvira že iz kvantnega denarja z zasebnimi ključi. Z večkratnim verificiranjem lahko ponarejevalec pridobi dodatne informacije o stanju kvantnega sistema, ki ga želi klonirati. V članku \cite{aaronsonQuantumMoneyHidden2012} avtorji predlagajo sistem kvantnega denarja z zasebnim ključem, ki omogoča neomejeno verifikacij in še vedno ostaja varen, kot tudi nov varen sistem kvantnega denarja z javnim ključem. 
 
 \subsection{Decentraliziran kvantni denar}
 
 Na podlagi sheme kvantnega denarja z javnim ključem \cite{aaronsonQuantumMoneyHidden2012} so v delu tudi naprednejše sheme, ki namesto centralne banke v vlogo verifikatorja postavijo decentraliziran sistem validatorjev. V članku Kvantni Bitcoin avtorji (\cite{jogenforsQuantumBitcoinAnonymous2019}) nadgradijo protokol veriženja blokov Bitcoin, ki ga uporabijo za verifikacijo in izdajo fiksne količine fizičnih kvantnih bankovcev kot primer decentralizirane valute, ki je ne nadzoruje nobena banka, temveč decentraliziran sistem validatorjev.   
 
 \subsection{Fizična realizacija}
-Kljub vsem napredkom na področju kvantnega denarja pa ima le-te še vedno eno veliko težavo. Trenutno (in verjetno še nekaj časa) ne obstaja nobena praktična in cenovno ugodna tehnologija, ki bi omogočala masovno implementacijo katere koli prej opisane sheme. Za to namreč potrebujemo t.i. kvantni pomnilnik - komponento analogno npr. pomnilniku FLASH - ki je za daljše časovno obdobje sposobna shraniti stanje kubita in je odporna na motnje iz okolice. Trenutno je to eno izmed bolj aktivnih področij raziskav. Avtorjem nedavnega članka \cite{RobustMultiqubitQuantum} je uspelo ustvariti dvokubitni register, ki lahko pri temperaturi 1.5 $K$ shrani kvantno stanje fotonov za nekaj več kot 2 sekundi.  
+Trenutno ne obstaja nobena praktična in cenovno ugodna tehnologija, ki bi omogočala masovno implementacijo katere koli prej opisane sheme. Za to namreč potrebujemo t.i. kvantni pomnilnik - komponento analogno npr. pomnilniku FLASH - ki je za daljše časovno obdobje sposobna shraniti stanje kubita in je odporna na motnje iz okolice. Trenutno je to eno izmed bolj aktivnih področij raziskav. Avtorjem nedavnega članka \cite{RobustMultiqubitQuantum} je uspelo ustvariti dvokubitni register, ki lahko pri temperaturi 1.5 $K$ shrani kvantno stanje fotonov za nekaj več kot 2 sekundi.  
 
 \section{Zaključek}
 
-Izrek o prepovedi kloniranja na kvante sisteme postavi določene omejitve, ki jih iz klasične fizike nismo vajeni. Vendar nam to hkrati omogoči razvoj kvantnih tehnologij in protokolov, ki v kvantni fiziki ne bi bili mogoči. Ena izmed prvih takih shem je kvantni denar, ki je bila skupaj z originalnim člankom ena izmed prvih stopničk v razvoju kvantne informacijske teorije in drugih kvantnih informacijskih protokolov. V okviru tega seminarja smo preleteli osnovne koncepte kvantne informatike, dokazali izrek o prepovedi kloniranja in pokazali njegovo uporabo na konceptu kvantnega denarja, ki rešuje praktičen problem ponarejanja denarja. Tako kvantni denar kot tudi druga področja kvantne informatike so trenutno v zelo aktivnem razvoju, saj na nek način predstavljajo nadgradnjo aktualnih (informacijskih) sistemov za nekatere specifične uporabe. Poleg kvantnega denarja so v zelo aktivnem razvoju tudi druge kvantne tehnologije in protokoli, npr. super gosto kodiranje, kvantna izmenjava ključev (QKD, podrobneje BB84), kvantne kode za popravljanje napak (error-correcting codes), kvantni algoritmi, itd. Zanimvo bo videti, kako hitro nam bo uspelo zapletene kvantne naprave iz laboratorijev preseliti v naš vsakdan.
+V okviru tega seminarja smo preleteli osnovne koncepte kvantne informatike, dokazali izrek o prepovedi kloniranja in pokazali njegovo uporabo na konceptu kvantnega denarja, ki rešuje praktičen problem ponarejanja. Poleg kvantnega denarja so aktivna področja raziskav tudi: super gosto kodiranje, kvantna izmenjava ključev (QKD), kvantne kode za popravljanje napak, kvantni algoritmi, itd. Zanimvo bo videti, kako hitro nam bo uspelo zapletene kvantne naprave iz laboratorijev preseliti v naš vsakdan.
 
 \pagebreak
        
