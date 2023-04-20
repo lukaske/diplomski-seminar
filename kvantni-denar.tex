@@ -172,28 +172,8 @@ Jonesov vektor je tedaj definiran v ravnini $xy$ kot
 \begin{equation}
 {\displaystyle {\begin{pmatrix}E_{0x}e^{i\phi _{x}}\\E_{0y}e^{i\phi _{y}}\end{pmatrix}}.}
 \end{equation} 
-V Tabeli \ref{tab:pol} navedemo različne vrste polarizacije svetlobe, zaenkrat še klasično. Vendar je mogoče z reinterpretacijo Maxwellovih enačb elektrodinamike in kvantizacijo gostote energije ugotoviti, da so Jonesov vektor in računi povezani z njim  uporabni tudi za opis stanj posameznega fotona v kvantnem smislu \cite{PhotonPolarization2022}. Za klasičen sinusni ravni val, ki potuje v smeri $z$, je gostota vrtilne količine $\mathcal{L}$ enaka kar 
-\begin{equation}
- \boldsymbol { \mathcal{L} } = \mathbf{r} \times \boldsymbol { \mathcal{P} },
-\end{equation}
-kjer je $\mathbf{r}$ oddaljenost od osi $z$ in $\boldsymbol{\mathcal{P}}$ Poyntingov vektor. Z uvedbo kompleksnega vektorja elektromagnetnega polja $ \mathbf{F} = \sqrt{\frac{\epsilon_0}{2}} (\mathbf{E} + ic \mathbf{B}) $ in uporabo Fourierove transformacije (glej \cite{bialynicki-birulaCanonicalSeparationAngular2011}) lahko pridelamo izraz za gostoto spinske vrtilne količine ravnga vala, ki potuje v smeri $z$. Dobimo
-\begin{equation}
-{\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
-\end{equation}
-kjer je $\mathcal{E}_c$ gostota energije, $\omega$ krožna frekvenca valovanja, $\psi_R$ in $\psi_L$ pa sta normirana deleža leve in desne polarizacije, da velja ${\displaystyle 1=|\psi _{\rm {R}}|^{2}+|\psi _{\rm {L}}|^{2}}$. Do kvantnomehanskega izraza pridemo s pomočjo korespondenčnega načela. Zapišemo
-\begin{equation}
-    {N \hbar \omega \over V} = \mathcal{E}_c = \frac{ \epsilon_0 | \vec{E} |^2}{2}, \end{equation}
-kjer je $\vec{E}$ jakost električnega polja, $\mathcal{E}_c$ gostota energije, $N$ število fotonov, $V$ volumen in $\omega$ krožna frekvenca valovanja. Pričakovano spinsko vrtilno količino $\mathcal {L}$ lahko tedaj izpeljemo kot
-\begin{equation}
-{\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)={N\hbar  \over V}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
-\end{equation}
-kjer je $| \psi \rangle = \psi_R \, | R \rangle + \psi_L \, |L \rangle$ valovna funkcija fotona. Funkciji $| R \rangle$ in $| L \rangle$ pa sta definirani kot v Tabeli \ref{tab:pol}.  Sledi, da je spinska vrtilna količina fotona $l_{z}$ enaka 
-\begin{equation}
-{\displaystyle l_{z}=\hbar \left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right).}
-\end{equation}
-Iz rezultata interpretiramo, da ima vsak foton verjetnost $\mid \psi _{\rm {R}}\mid ^{2}$ za spinsko vrtilno količino enako $\hbar$ in verjetnost $\mid \psi _{\rm {L}}\mid ^{2}$ za spinsko vrtilno količino $- \hbar$. Foton je linearno polariziran takrat, ko je v superpoziciji stanj z enakim deležem "levo" in "desno" polariziranih stanj (tj. $ l_z = 0$). \cite{PhotonPolarization2022}
 
-\begin{table}[]
+\begin{table}[h]
 \centering
 \renewcommand{\arraystretch}{1.5} % Default value: 1
 \begin{tabular}{|l|l|l|}
@@ -208,6 +188,29 @@ Levo                  & $ {\frac  {1}{{\sqrt  2}}}{(1, +i)^T} $ & $ { |L\rangle 
 \caption{Tipi polarizacij in pripadajoči Jonesov vektor. Dodatno označena tudi tipična ket notacija. \cite{JonesCalculus2023} }
 \label{tab:pol}
 \end{table}
+
+
+V Tabeli \ref{tab:pol} navedemo različne vrste polarizacije svetlobe, zaenkrat še klasično. Vendar je mogoče z reinterpretacijo Maxwellovih enačb elektrodinamike in kvantizacijo gostote energije ugotoviti, da so Jonesov vektor in računi povezani z njim  uporabni tudi za opis stanj posameznega fotona v kvantnem smislu \cite{PhotonPolarization2022}. Za klasičen sinusni ravni val, ki potuje v smeri $z$, je gostota vrtilne količine $\mathcal{L}$ enaka kar 
+\begin{equation}
+ \boldsymbol { \mathcal{L} } = \mathbf{r} \times \boldsymbol { \mathcal{P} },
+\end{equation}
+kjer je $\mathbf{r}$ oddaljenost od osi $z$ in $\boldsymbol{\mathcal{P}}$ Poyntingov vektor. Z uvedbo kompleksnega vektorja elektromagnetnega polja $ \mathbf{F} = \sqrt{\frac{\epsilon_0}{2}} (\mathbf{E} + ic \mathbf{B}) $ in uporabo Fourierove transformacije (glej \cite{bialynicki-birulaCanonicalSeparationAngular2011}) lahko pridelamo izraz za gostoto spinske vrtilne količine ravnga vala, ki potuje v smeri $z$. Dobimo
+\begin{equation}
+{\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
+\end{equation}
+kjer je $\mathcal{E}_c$ gostota energije, $\omega$ krožna frekvenca valovanja, $\psi_R$ in $\psi_L$ pa sta normirana deleža leve in desne polarizacije, da velja ${\displaystyle 1=|\psi _{\rm {R}}|^{2}+|\psi _{\rm {L}}|^{2}}$. Do kvantnomehanskega izraza pridemo s pomočjo korespondenčnega načela. Zapišemo
+\begin{equation}
+    {N \hbar \omega \over V} = \mathcal{E}_c = \frac{ \epsilon_0 | \mathbf{E} |^2}{2}, \end{equation}
+kjer je $\vec{E}$ jakost električnega polja, $\mathcal{E}_c$ gostota energije, $N$ število fotonov, $V$ volumen in $\omega$ krožna frekvenca valovanja. Pričakovano spinsko vrtilno količino $\mathcal {L}$ lahko tedaj izpeljemo kot
+\begin{equation}
+{\displaystyle {\mathcal {L}}={1 \over \omega }{\mathcal {E}}_{c}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)={N\hbar  \over V}\left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right)},
+\end{equation}
+kjer je $| \psi \rangle = \psi_R \, | R \rangle + \psi_L \, |L \rangle$ valovna funkcija fotona. Funkciji $| R \rangle$ in $| L \rangle$ pa sta definirani kot v Tabeli \ref{tab:pol}.  Sledi, da je spinska vrtilna količina fotona $l_{z}$ enaka 
+\begin{equation}
+{\displaystyle l_{z}=\hbar \left(\mid \psi _{\rm {R}}\mid ^{2}-\mid \psi _{\rm {L}}\mid ^{2}\right).}
+\end{equation}
+Iz rezultata interpretiramo, da ima vsak foton verjetnost $\mid \psi _{\rm {R}}\mid ^{2}$ za spinsko vrtilno količino enako $\hbar$ in verjetnost $\mid \psi _{\rm {L}}\mid ^{2}$ za spinsko vrtilno količino $- \hbar$. Foton je linearno polariziran takrat, ko je v superpoziciji stanj z enakim deležem "levo" in "desno" polariziranih stanj (tj. $ l_z = 0$). \cite{PhotonPolarization2022}
+
 
 \subsection{Razločljivost neortognalnih stanj}
 
