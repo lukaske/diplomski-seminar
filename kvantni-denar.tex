@@ -79,7 +79,7 @@ Leta 1983 je Stephen Wiesner objavil članek v katerem predlaga shemo t.i. "Kvan
 
 \subsection{Lastnosti kvantnih sistemov}
 
-V klasični fiziki lastnosti sistema obstajajo neodvisno od meritve in so del realnosti. Meritev te lastnosti le razkrije. V kvantni mehaniki pa vektor stanja določa le verjetnosti, da bomo pri meritvi dobili določen rezultat. Dva delca, ki sta na začetku opisana z enakim vektorjem stanja, lahko ob isti meritvi vrneta dva različna rezultata. Kvantno mehaniko lahko razumemo kot matematično ogrodje za razvoj fizikalnih teorij, ki smo ga izoblikovali na podlagi več deset let fizikalnih eksperimentov in ugibanja, kako se obnaša narava na skali atomov in podatomskih delcev. Osnovni postulati kvantne mehanike tako predstavljajo povezavo med fizičnim svetom in matematičnim formalizmom.
+V klasični fiziki lastnosti sistema obstajajo neodvisno od meritve in so del realnosti. Meritev te lastnosti le razkrije. V kvantni mehaniki pa vektor stanja določa le verjetnosti, da bomo pri meritvi dobili določen rezultat. Dva delca, ki sta na začetku opisana z enakim vektorjem stanja, lahko ob isti meritvi vrneta dva različna rezultata. Kvantno mehaniko lahko razumemo kot matematično ogrodje za razvoj fizikalnih teorij, ki smo ga izoblikovali na podlagi več deset let fizikalnih eksperimentov in ugibanja, kako se obnaša narava na skali atomov in podatomskih delcev. Osnovni postulati kvantne mehanike tako predstavljajo povezavo med fizičnim svetom in matematičnim formalizmom. \cite{zitkoKvantneRacunalniskeTehnologije2017}
 
 \begin{postulat}
 Kvantno stanje je element Hilbertovega prostora.
@@ -100,8 +100,6 @@ V kvantni mehaniki opazljivkam ustrezajo hermitski operatorji.
 \begin{postulat}
 Časovno spreminjanje kvantnega stanja opišemo z unitarnim operatorjem.
 \end{postulat}
-S tem smo postavili osnove matematičnega formalizma, s katerim bomo delali v nadaljevanju. \cite{zitkoKvantneRacunalniskeTehnologije2017}
-
 
 
 \subsection{Kubit}
@@ -143,6 +141,10 @@ kjer smo na primer stanje $ | 0 \rangle_a \otimes | 1 \rangle_b $ zapisali kot $
 
 Poljubnega stanja dveh ali več kubitov v splošnem \emph{ne} moremo zapisati v produktni bazi kot $ | \Psi \rangle_{ab} = | \psi \rangle_a \, |\phi \rangle_b$. Torej za dane koeficiente $c_{00}$, $c_{01}$, $c_{10}$ in $c_{11}$ ne moremo določiti koeficientov $c_{a0}$, $c_{a1}$, $c_{b0}$ in $c_{b1}$. Takšnemu stanju pravimo, da je \emph{prepleteno}. \cite{pompeKvantniAlgoritmi2022}
 \par Sistem z $n$ kubiti ima $2^n$ možnih stanj, torej je stanje le-tega superpozicija $2^n$ lastnih stanj oziroma ima vektor stanja $2^n$ komponent. Ko izmerimo stanje sistema, kolapsiramo superpozicijo in izmerimo le eno od $2^n$ možnih stanj s točno določeno verjetnostjo. \cite{pompeKvantniAlgoritmi2022}
+
+\subsubsection{Bellova stanja (pari EPR)}
+Štiri specifična dvokubitna stanja, ki so med seboj maksimalno prepletena, imenujemo Bellova. Med seboj so ortogonalna in tvorijo bazo štiridimenzionalnega Hilbertovega prostora za dva kubita. Štiri Bellova stanja so: $|\Phi ^{+}\rangle = {\displaystyle { {(2)^{-1/2}(|00\rangle +|11\rangle )}}} $, $|\Phi ^{-}\rangle = {\displaystyle { {(2)^{-1/2}(|00\rangle -|11\rangle )}}}$, $|\Psi ^{+}\rangle = {\displaystyle { {(2)^{-1/2}(|01\rangle +|10\rangle )}}}$ in $|\Psi ^{-}\rangle = {\displaystyle { {(2)^{-1/2}(|01\rangle -|10\rangle )}}}$. Rezultat meritve enega samega kubita v enem izmed Bellovih stanj je naključen, vendar z meritvijo prvega kubita določimo tudi stanje, ki ga bomo izmerili pri drugi meritvi. Velja, da bo druga meritev enaka prvi za stanja $\Phi$ ali nasprotna prvemu za stanja $\Psi$. To opažanje implicira, da sta rezultata meritev prvega in drugega kubita korelirana. Ime so dobila po Johnu Bellu, ki je prvi pokazal, da tako močne korelacije znotraj klasične fizike niso mogoče in da gre za pojave, ki jih lahko opazimo samo v svetu kvantne mehanike. \cite{BellState2023}
+
 
 \subsection{Polarizacija svetlobe}
 
@@ -330,10 +332,10 @@ Ena izmed poglavitnih težav Wiesnerjeve sheme kvantnega denarja je odvisnost od
 
 \subsection{Decentraliziran kvantni denar}
 
-Na podlagi sheme kvantnega denarja z javnim ključem \cite{aaronsonQuantumMoneyHidden2012} so v delu tudi naprednejše sheme, ki namesto centralne banke v vlogo verifikatorja postavijo decentraliziran sistem validatorjev. V članku Kvantni Bitcoin avtorji (\cite{jogenforsQuantumBitcoinAnonymous2019}) nadgradijo protokol veriženja blokov Bitcoin, ki ga uporabijo za verifikacijo in izdajo fiksne količine fizičnih kvantnih bankovcev kot primer decentralizirane valute, ki je ne nadzoruje nobena banka, temveč decentraliziran sistem validatorjev.   
+Na podlagi sheme kvantnega denarja z javnim ključem \cite{aaronsonQuantumMoneyHidden2012} so v delu tudi naprednejše sheme, ki namesto centralne banke v vlogo verifikatorja postavijo decentraliziran sistem validatorjev. V članku Kvantni Bitcoin avtorji (\cite{jogenforsQuantumBitcoinAnonymous2019}) nadgradijo protokol veriženja blokov Bitcoin, ki ga uporabijo za verifikacijo in izdajo fiksne količine fizičnih kvantnih bankovcev kot primer fizične decentralizirane valute, ki je ne nadzoruje nobena banka. 
 
 \subsection{Fizična realizacija}
-Trenutno ne obstaja nobena praktična in cenovno ugodna tehnologija, ki bi omogočala masovno implementacijo katere koli prej opisane sheme. Za to namreč potrebujemo t.i. kvantni pomnilnik - komponento analogno npr. pomnilniku FLASH - ki je za daljše časovno obdobje sposobna shraniti stanje kubita in je odporna na motnje iz okolice. Trenutno je to eno izmed bolj aktivnih področij raziskav. Avtorjem nedavnega članka \cite{RobustMultiqubitQuantum} je uspelo ustvariti dvokubitni register, ki lahko pri temperaturi 1.5 $K$ shrani kvantno stanje fotonov za nekaj več kot 2 sekundi.  
+Trenutno ne obstaja praktična tehnologija, ki bi omogočala obstoj kvantnega denarja. Za to namreč potrebujemo t.i. kvantni pomnilnik - komponento analogno npr. pomnilniku FLASH - ki je za daljše časovno obdobje sposobna shraniti stanje kubita in je odporna na motnje iz okolice. Trenutno je to eno izmed bolj aktivnih področij raziskav. Avtorjem nedavnega članka \cite{RobustMultiqubitQuantum} je uspelo ustvariti dvokubitni register, ki lahko pri temperaturi 1.5 $K$ shrani kvantno stanje fotonov za nekaj več kot 2 sekundi.  
 
 \section{Zaključek}
 

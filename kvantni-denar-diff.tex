@@ -1,7 +1,7 @@
  \documentclass[12pt]{article} 
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL kvantni-denar_old.tex   Thu Apr 20 14:19:43 2023
-%DIF ADD kvantni-denar.tex       Thu Apr 20 15:17:14 2023
+%DIF ADD kvantni-denar.tex       Thu Apr 20 16:10:57 2023
  \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -168,7 +168,9 @@ Leta 1983 je Stephen Wiesner objavil članek v katerem predlaga shemo t.i. "Kvan
 
 \DIFaddbegin \subsection{\DIFadd{Lastnosti kvantnih sistemov}}
 
-\DIFadd{V klasični fiziki lastnosti sistema obstajajo neodvisno od meritve in so del realnosti. Meritev te lastnosti le razkrije. V kvantni mehaniki pa vektor stanja določa le verjetnosti, da bomo pri meritvi dobili določen rezultat. Dva delca, ki sta na začetku opisana z enakim vektorjem stanja, lahko ob isti meritvi vrneta dva različna rezultata. Kvantno mehaniko lahko razumemo kot matematično ogrodje za razvoj fizikalnih teorij, ki smo ga izoblikovali na podlagi več deset let fizikalnih eksperimentov in ugibanja, kako se obnaša narava na skali atomov in podatomskih delcev. Osnovni postulati kvantne mehanike tako predstavljajo povezavo med fizičnim svetom in matematičnim formalizmom.
+\DIFadd{V klasični fiziki lastnosti sistema obstajajo neodvisno od meritve in so del realnosti. Meritev te lastnosti le razkrije. V kvantni mehaniki pa vektor stanja določa le verjetnosti, da bomo pri meritvi dobili določen rezultat. Dva delca, ki sta na začetku opisana z enakim vektorjem stanja, lahko ob isti meritvi vrneta dva različna rezultata. Kvantno mehaniko lahko razumemo kot matematično ogrodje za razvoj fizikalnih teorij, ki smo ga izoblikovali na podlagi več deset let fizikalnih eksperimentov in ugibanja, kako se obnaša narava na skali atomov in podatomskih delcev. Osnovni postulati kvantne mehanike tako predstavljajo povezavo med fizičnim svetom in matematičnim formalizmom. \mbox{%DIFAUXCMD
+\cite{zitkoKvantneRacunalniskeTehnologije2017}
+}\hskip0pt%DIFAUXCMD
 }
 
 \begin{postulat}
@@ -190,11 +192,6 @@ Leta 1983 je Stephen Wiesner objavil članek v katerem predlaga shemo t.i. "Kvan
 \begin{postulat}
 \DIFadd{Časovno spreminjanje kvantnega stanja opišemo z unitarnim operatorjem.
 }\end{postulat}
-\DIFadd{S tem smo postavili osnove matematičnega formalizma, s katerim bomo delali v nadaljevanju. \mbox{%DIFAUXCMD
-\cite{zitkoKvantneRacunalniskeTehnologije2017}
-}\hskip0pt%DIFAUXCMD
-}
-
 
 
 \DIFaddend \subsection{Kubit}
@@ -237,11 +234,8 @@ kjer smo na primer stanje $ | 0 \rangle_a \otimes | 1 \rangle_b $ zapisali kot $
 Poljubnega stanja dveh ali več kubitov v splošnem \emph{ne} moremo zapisati v produktni bazi kot $ | \Psi \rangle_{ab} = | \psi \rangle_a \, |\phi \rangle_b$. Torej za dane koeficiente $c_{00}$, $c_{01}$, $c_{10}$ in $c_{11}$ ne moremo določiti koeficientov $c_{a0}$, $c_{a1}$, $c_{b0}$ in $c_{b1}$. Takšnemu stanju pravimo, da je \emph{prepleteno}. \cite{pompeKvantniAlgoritmi2022}
 \par Sistem z $n$ kubiti ima $2^n$ možnih stanj, torej je stanje le-tega superpozicija $2^n$ lastnih stanj oziroma ima vektor stanja $2^n$ komponent. Ko izmerimo stanje sistema, kolapsiramo superpozicijo in izmerimo le eno od $2^n$ možnih stanj s točno določeno verjetnostjo. \cite{pompeKvantniAlgoritmi2022}
 
-\DIFdelbegin \subsubsection{\DIFdel{Bellova stanja (pari EPR)}}
-%DIFAUXCMD
-\addtocounter{subsubsection}{-1}%DIFAUXCMD
-\DIFdel{Štiri specifična dvokubitna stanja imenujemo Bellova stanja. Za ta stanja je značilno, da so med seboj maksimalno prepletena in hkrati tvorijo bazo štiri-dimenzijskega Hilbertovega prostora za dva kubita. Štiri Bellova stanja so:
-}%DIFDELCMD < \begin{equation}
+\subsubsection{Bellova stanja (pari EPR)}
+Štiri specifična dvokubitna stanja\DIFdelbegin \DIFdel{imenujemo Bellova stanja. Za ta stanja je značilno, da }\DIFdelend \DIFaddbegin \DIFadd{, ki }\DIFaddend so med seboj maksimalno prepletena\DIFdelbegin \DIFdel{in hkrati tvorijo bazo štiri-dimenzijskega }\DIFdelend \DIFaddbegin \DIFadd{, imenujemo Bellova. Med seboj so ortogonalna in tvorijo bazo štiridimenzionalnega }\DIFaddend Hilbertovega prostora za dva kubita. Štiri Bellova stanja so: \DIFdelbegin %DIFDELCMD < \begin{equation}
 %DIFDELCMD < |\Phi ^{+}\rangle ={\frac{1}{{\sqrt  {2}}}}(|0\rangle _{A}\otimes |0\rangle _{B}+|1\rangle _{A}\otimes |1\rangle _{B}) \\
 %DIFDELCMD < \end{equation}
 %DIFDELCMD < \begin{equation}
@@ -254,13 +248,10 @@ Poljubnega stanja dveh ali več kubitov v splošnem \emph{ne} moremo zapisati v 
 %DIFDELCMD < {\displaystyle |\Psi ^{-}\rangle ={\frac{1}{\sqrt {2}}}(|0\rangle _{A}\otimes |1\rangle _{B}-|1\rangle _{A}\otimes |0\rangle _{B})}.
 %DIFDELCMD < \end{equation}
 %DIFDELCMD < %%%
-\DIFdel{Rezultat meritve enega samega kubita v enem izmed Bellovih stanj je naključen, vendar z meritvijo prvega kubita določimo tudi stanje, ki ga bomo izmerili pri drugi meritvi. Velja, da bo druga meritev enaka prvi za stanja $\Phi$ ali nasprotna prvemu za stanja $\Psi$. To opažanje implicira, da sta rezultata meritev prvega in drugega kubita korelirana. Stanja se imenujejo Bellova, saj je John Bell prvi pokazal, da tako močne korelacije znotraj klasične fizike niso mogoče in da gre za pojave, ki jih lahko opazimo samo v svetu kvantne mehanike. \mbox{%DIFAUXCMD
-\cite{BellState2023}
-}\hskip0pt%DIFAUXCMD
-}%DIFDELCMD < 
+\DIFdelend \DIFaddbegin \DIFadd{$|\Phi ^{+}\rangle = {\displaystyle { {(2)^{-1/2}(|00\rangle +|11\rangle )}}} $, $|\Phi ^{-}\rangle = {\displaystyle { {(2)^{-1/2}(|00\rangle -|11\rangle )}}}$, $|\Psi ^{+}\rangle = {\displaystyle { {(2)^{-1/2}(|01\rangle +|10\rangle )}}}$ in $|\Psi ^{-}\rangle = {\displaystyle { {(2)^{-1/2}(|01\rangle -|10\rangle )}}}$. }\DIFaddend Rezultat meritve enega samega kubita v enem izmed Bellovih stanj je naključen, vendar z meritvijo prvega kubita določimo tudi stanje, ki ga bomo izmerili pri drugi meritvi. Velja, da bo druga meritev enaka prvi za stanja $\Phi$ ali nasprotna prvemu za stanja $\Psi$. To opažanje implicira, da sta rezultata meritev prvega in drugega kubita korelirana. \DIFdelbegin \DIFdel{Stanja se imenujejo Bellova, saj je John Bell }\DIFdelend \DIFaddbegin \DIFadd{Ime so dobila po Johnu Bellu, ki je }\DIFaddend prvi pokazal, da tako močne korelacije znotraj klasične fizike niso mogoče in da gre za pojave, ki jih lahko opazimo samo v svetu kvantne mehanike. \cite{BellState2023}
 
-%DIFDELCMD < %%%
-\DIFdelend \subsection{Polarizacija svetlobe}
+
+\subsection{Polarizacija svetlobe}
 
 Primer preprostega dvonivojskega kvantnega sistema je polarizacija svetlobe oz. fotonov. Za opis polarizacije svetlobe si lahko v optiki pomagamo z Jonesovim vektorjem in Jonesovim računom \cite{JonesCalculus2023}, kjer kompleksno amplitudo $\vec{E}$ \DIFdelbegin \DIFdel{našega elektromagnetnega }\DIFdelend \DIFaddbegin \DIFadd{elektromagnetnega valovanja }\DIFaddend opišemo kot
 
@@ -487,10 +478,10 @@ težavo z javnim kvantnim denarjem reši tako, da informacijsko varno shemo pret
 %DIFDELCMD < %%%
 \DIFdelend \subsection{Decentraliziran kvantni denar}
 
-Na podlagi sheme kvantnega denarja z javnim ključem \cite{aaronsonQuantumMoneyHidden2012} so v delu tudi naprednejše sheme, ki namesto centralne banke v vlogo verifikatorja postavijo decentraliziran sistem validatorjev. V članku Kvantni Bitcoin avtorji (\cite{jogenforsQuantumBitcoinAnonymous2019}) nadgradijo protokol veriženja blokov Bitcoin, ki ga uporabijo za verifikacijo in izdajo fiksne količine fizičnih kvantnih bankovcev kot primer decentralizirane valute, ki je ne nadzoruje nobena banka, temveč decentraliziran sistem validatorjev.   
+Na podlagi sheme kvantnega denarja z javnim ključem \cite{aaronsonQuantumMoneyHidden2012} so v delu tudi naprednejše sheme, ki namesto centralne banke v vlogo verifikatorja postavijo decentraliziran sistem validatorjev. V članku Kvantni Bitcoin avtorji (\cite{jogenforsQuantumBitcoinAnonymous2019}) nadgradijo protokol veriženja blokov Bitcoin, ki ga uporabijo za verifikacijo in izdajo fiksne količine fizičnih kvantnih bankovcev kot primer \DIFaddbegin \DIFadd{fizične }\DIFaddend decentralizirane valute, ki je ne nadzoruje nobena banka\DIFdelbegin \DIFdel{, temveč decentraliziran sistem validatorjev}\DIFdelend . 
 
 \subsection{Fizična realizacija}
-\DIFdelbegin \DIFdel{Kljub vsem napredkom na področju kvantnega denarja pa ima le-te še vedno eno veliko težavo. Trenutno (in verjetno še nekaj časa) }\DIFdelend \DIFaddbegin \DIFadd{Trenutno }\DIFaddend ne obstaja nobena praktična in cenovno ugodna tehnologija, ki bi omogočala masovno implementacijo katere koli prej opisane sheme. Za to namreč potrebujemo t.i. kvantni pomnilnik - komponento analogno npr. pomnilniku FLASH - ki je za daljše časovno obdobje sposobna shraniti stanje kubita in je odporna na motnje iz okolice. Trenutno je to eno izmed bolj aktivnih področij raziskav. Avtorjem nedavnega članka \cite{RobustMultiqubitQuantum} je uspelo ustvariti dvokubitni register, ki lahko pri temperaturi 1.5 $K$ shrani kvantno stanje fotonov za nekaj več kot 2 sekundi.  
+\DIFdelbegin \DIFdel{Kljub vsem napredkom na področju kvantnega denarja pa ima le-te še vedno eno veliko težavo. Trenutno (in verjetno še nekaj časa) ne obstaja nobena }\DIFdelend \DIFaddbegin \DIFadd{Trenutno ne obstaja }\DIFaddend praktična \DIFdelbegin \DIFdel{in cenovno ugodna }\DIFdelend tehnologija, ki bi omogočala \DIFdelbegin \DIFdel{masovno implementacijo katere koli prej opisane sheme}\DIFdelend \DIFaddbegin \DIFadd{obstoj kvantnega denarja}\DIFaddend . Za to namreč potrebujemo t.i. kvantni pomnilnik - komponento analogno npr. pomnilniku FLASH - ki je za daljše časovno obdobje sposobna shraniti stanje kubita in je odporna na motnje iz okolice. Trenutno je to eno izmed bolj aktivnih področij raziskav. Avtorjem nedavnega članka \cite{RobustMultiqubitQuantum} je uspelo ustvariti dvokubitni register, ki lahko pri temperaturi 1.5 $K$ shrani kvantno stanje fotonov za nekaj več kot 2 sekundi.  
 
 \section{Zaključek}
 
