@@ -11,7 +11,7 @@
 
 **Abstract**
 
-In quantum mechanics, we encounter some physical phenomena that are unfamiliar from classical physics. However, this strange new physics enables us to develop technologies that would not be possible within the framework of classical physics. One such example is the no-cloning theorem, which provides the theoretical foundation for a large family of quantum cryptographic protocols. In this seminar, we review the basic concepts of quantum information theory, derive and prove the no-cloning theorem, and use it to solve the problem of counterfeiting money under the principles of unconditional security.
+In quantum mechanics, we encounter some physical phenomena that are unfamiliar from classical physics. However strange, this new physics enables us to develop technologies that would not be possible within the framework of classical physics. One such example is the no-cloning theorem, which provides the theoretical foundation for a large family of quantum cryptographic protocols. In this seminar, we review the basic concepts of quantum information theory, derive and prove the no-cloning theorem, and use it to solve the problem of counterfeiting money under the principles of unconditional security.
 
 **Povzetek**
 
