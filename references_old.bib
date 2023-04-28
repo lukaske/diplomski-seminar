@@ -307,7 +307,6 @@
 }
 
 @article{menonSmartCardsService2017,
-  entrysubtype = {newspaper},
   title = {Smart Cards: {{Service}} Providers Must Conduct Due Diligence before Giving Bulk Manufacturing Orders},
   shorttitle = {Smart Cards},
   author = {Menon, Shailesh},
@@ -317,6 +316,7 @@
   url = {https://economictimes.indiatimes.com/small-biz/security-tech/security/smart-cards-service-providers-must-conduct-due-diligence-before-giving-bulk-manufacturing-orders/articleshow/57999206.cms?from=mdr},
   urldate = {2023-03-29},
   abstract = {The smart card industry is estimated to have received (credit and debit) card orders worth Rs 1,000 crore in the current fiscal.},
+  entrysubtype = {newspaper},
   file = {/Users/luka/Zotero/storage/LPE3WVZR/57999206.html}
 }
 
@@ -441,42 +441,6 @@
   file = {/Users/luka/Zotero/storage/ADA4NLA6/Pompe - 2022 - Kvantni algoritmi.pdf}
 }
 
-@inreference{QuantumErrorCorrection2023,
-  title = {Quantum Error Correction},
-  booktitle = {Wikipedia},
-  date = {2023-04-07T09:09:41Z},
-  url = {https://en.wikipedia.org/w/index.php?title=Quantum_error_correction&oldid=1148622220},
-  urldate = {2023-04-28},
-  abstract = {Quantum error correction (QEC) is used in quantum computing to protect quantum information from errors due to decoherence and other quantum noise. Quantum error correction is theorised as essential to achieve fault tolerant quantum computing that can reduce the effects of noise on stored quantum information, faulty quantum gates, faulty quantum preparation, and faulty measurements. This would allow algorithms of greater circuit depth.Classical error correction employs redundancy. The simplest albeit inefficient approach is the repetition code. The idea is to store the information multiple times, and\textemdash if these copies are later found to disagree\textemdash take a majority vote; e.g. suppose we copy a bit in the one state three times. Suppose further that a noisy error corrupts the three-bit state so that one of the copied bits is equal to zero but the other two are equal to one. Assuming that noisy errors are independent and occur with some sufficiently low probability p, it is most likely that the error is a single-bit error and the transmitted message is three ones. It is possible that a double-bit error occurs and the transmitted message is equal to three zeros, but this outcome is less likely than the above outcome. In this example, the logical information was a single bit in the one state, the physical information are the three copied bits, and determining what logical state is encoded in the physical state is called decoding. Similar to classical error correction, QEC codes do not always correctly decode logical qubits, but their use reduces the effect of noise. Copying quantum information is not possible due to the no-cloning theorem. This theorem seems to present an obstacle to formulating a theory of quantum error correction. But it is possible to spread the (logical) information of one qubit onto a highly entangled state of several (physical) qubits. Peter Shor first discovered this method of formulating a quantum error correcting code by storing the information of one qubit onto a highly entangled state of nine qubits. Classical error correcting codes use a syndrome measurement to diagnose which error corrupts an encoded state. An error can then be reversed by applying a corrective operation based on the syndrome. Quantum error correction also employs syndrome measurements. It performs a multi-qubit measurement that does not disturb the quantum information in the encoded state but retrieves information about the error. Depending on the QEC code used, syndrome measurement can determine the occurrence, location and type of errors. In most QEC codes, the type of error is either a bit flip, or a sign (of the phase) flip, or both (corresponding to the Pauli matrices X, Z, and Y). The measurement of the syndrome has the projective effect of a quantum measurement, so even if the error due to the noise was arbitrary, it can be expressed as a combination of basis operations called the error basis (which is given by the Pauli matrices and the identity). To correct the error, the Pauli operator corresponding to the type of error is used on the corrupted qubit to revert the effect of the error. The syndrome measurement provides information about the error that has happened, but not about the information that is stored in the logical qubit\textemdash as otherwise the measurement would destroy any quantum superposition of this logical qubit with other qubits in the quantum computer, which would prevent it from being used to convey quantum information.},
-  langid = {english},
-  annotation = {Page Version ID: 1148622220},
-  file = {/Users/luka/Zotero/storage/DTKFHJ9U/Quantum_error_correction.html}
-}
-
-@inreference{QuantumKeyDistribution2023,
-  title = {Quantum Key Distribution},
-  booktitle = {Wikipedia},
-  date = {2023-04-13T20:40:19Z},
-  url = {https://en.wikipedia.org/w/index.php?title=Quantum_key_distribution&oldid=1149690510},
-  urldate = {2023-04-28},
-  abstract = {Quantum key distribution (QKD) is a secure communication method that implements a cryptographic protocol involving components of quantum mechanics. It enables two parties to produce a shared random secret key known only to them, which then can be used to encrypt and decrypt messages. The process of quantum key distribution  is not to be confused with quantum cryptography, as it is the best-known example of a quantum-cryptographic task. An important and unique property of quantum key distribution is the ability of the two communicating users to detect the presence of any third party trying to gain knowledge of the key. This results from a fundamental aspect of quantum mechanics: the process of measuring a quantum system in general disturbs the system. A third party trying to eavesdrop on the key must in some way measure it, thus introducing detectable anomalies. By using quantum superpositions or quantum entanglement and transmitting information in quantum states, a communication system can be implemented that detects eavesdropping. If the level of eavesdropping is below a certain threshold, a key can be produced that is guaranteed to be secure (i.e., the eavesdropper has no information about it). Otherwise no secure key is possible, and communication is aborted. The security of encryption that uses quantum key distribution relies on the foundations of quantum mechanics, in contrast to traditional public key cryptography, which relies on the computational difficulty of certain mathematical functions, and cannot provide any mathematical proof as to the actual complexity of reversing the one-way functions used. QKD has provable security based on information theory, and forward secrecy. The main drawback of quantum-key distribution is that it usually relies on having an authenticated classical channel of communication. In modern cryptography, having an authenticated classical channel means that one already has exchanged either a symmetric key of sufficient length or public keys of sufficient security level. With such information already available, in practice one can achieve authenticated and sufficiently secure communication without using QKD, such as by using the Galois/Counter Mode of the Advanced Encryption Standard. Thus QKD does the work of a stream cipher at many times the cost. Quantum key distribution is used to produce and distribute only a key, not to transmit any message data. This key can then be used with any chosen encryption algorithm to encrypt (and decrypt) a message, which can then be transmitted over a standard communication channel. The algorithm most commonly associated with QKD is the one-time pad, as it is provably secure when used with a secret, random key. In real-world situations, it is often also used with encryption using symmetric key algorithms like the Advanced Encryption Standard algorithm.},
-  langid = {english},
-  annotation = {Page Version ID: 1149690510},
-  file = {/Users/luka/Zotero/storage/V3SL5VVU/Quantum_key_distribution.html}
-}
-
-@inreference{QuantumKeyDistribution2023a,
-  title = {Quantum Key Distribution},
-  booktitle = {Wikipedia},
-  date = {2023-04-13T20:40:19Z},
-  url = {https://en.wikipedia.org/w/index.php?title=Quantum_key_distribution&oldid=1149690510},
-  urldate = {2023-04-28},
-  abstract = {Quantum key distribution (QKD) is a secure communication method that implements a cryptographic protocol involving components of quantum mechanics. It enables two parties to produce a shared random secret key known only to them, which then can be used to encrypt and decrypt messages. The process of quantum key distribution  is not to be confused with quantum cryptography, as it is the best-known example of a quantum-cryptographic task. An important and unique property of quantum key distribution is the ability of the two communicating users to detect the presence of any third party trying to gain knowledge of the key. This results from a fundamental aspect of quantum mechanics: the process of measuring a quantum system in general disturbs the system. A third party trying to eavesdrop on the key must in some way measure it, thus introducing detectable anomalies. By using quantum superpositions or quantum entanglement and transmitting information in quantum states, a communication system can be implemented that detects eavesdropping. If the level of eavesdropping is below a certain threshold, a key can be produced that is guaranteed to be secure (i.e., the eavesdropper has no information about it). Otherwise no secure key is possible, and communication is aborted. The security of encryption that uses quantum key distribution relies on the foundations of quantum mechanics, in contrast to traditional public key cryptography, which relies on the computational difficulty of certain mathematical functions, and cannot provide any mathematical proof as to the actual complexity of reversing the one-way functions used. QKD has provable security based on information theory, and forward secrecy. The main drawback of quantum-key distribution is that it usually relies on having an authenticated classical channel of communication. In modern cryptography, having an authenticated classical channel means that one already has exchanged either a symmetric key of sufficient length or public keys of sufficient security level. With such information already available, in practice one can achieve authenticated and sufficiently secure communication without using QKD, such as by using the Galois/Counter Mode of the Advanced Encryption Standard. Thus QKD does the work of a stream cipher at many times the cost. Quantum key distribution is used to produce and distribute only a key, not to transmit any message data. This key can then be used with any chosen encryption algorithm to encrypt (and decrypt) a message, which can then be transmitted over a standard communication channel. The algorithm most commonly associated with QKD is the one-time pad, as it is provably secure when used with a secret, random key. In real-world situations, it is often also used with encryption using symmetric key algorithms like the Advanced Encryption Standard algorithm.},
-  langid = {english},
-  annotation = {Page Version ID: 1149690510},
-  file = {/Users/luka/Zotero/storage/JUSJ47RJ/Quantum_key_distribution.html}
-}
-
 @inreference{QuantumMoney2022,
   title = {Quantum Money},
   booktitle = {Wikipedia},
@@ -521,42 +485,6 @@
   url = {https://murdoch.is/projects/currency/},
   urldate = {2023-03-29},
   file = {/Users/luka/Zotero/storage/VLCC529K/currency.html}
-}
-
-@inreference{StimulatedEmission2023,
-  title = {Stimulated Emission},
-  booktitle = {Wikipedia},
-  date = {2023-03-19T02:08:17Z},
-  url = {https://en.wikipedia.org/w/index.php?title=Stimulated_emission&oldid=1145420509},
-  urldate = {2023-04-28},
-  abstract = {Stimulated emission is the process by which an incoming photon of a specific frequency can interact with an excited atomic electron (or other excited molecular state), causing it to drop to a lower energy level. The liberated energy transfers to the electromagnetic field, creating a new photon with a frequency, polarization, and direction of travel that are all identical to the photons of the incident wave. This is in contrast to spontaneous emission, which occurs at a characteristic rate for each of the atoms/oscillators in the upper energy state regardless of the external electromagnetic field. According to the American Physical Society, the first person to correctly predict the phenomenon of stimulated emission was Albert Einstein in a series of papers starting in 1916, culminating in what is now called the Einstein B Coefficient. Einstein's work became the theoretical foundation of the MASER and LASER. The process is identical in form to atomic absorption in which the energy of an absorbed photon causes an identical but opposite atomic transition: from the lower level to a higher energy level. In normal media at thermal equilibrium, absorption exceeds stimulated emission because there are more electrons in the lower energy states than in the higher energy states. However, when a population inversion is present, the rate of stimulated emission exceeds that of absorption, and a net optical amplification can be achieved. Such a gain medium, along with an optical resonator, is at the heart of a laser or maser. Lacking a feedback mechanism, laser amplifiers and superluminescent sources also function on the basis of stimulated emission.},
-  langid = {english},
-  annotation = {Page Version ID: 1145420509},
-  file = {/Users/luka/Zotero/storage/JZ7TPZNI/Stimulated_emission.html}
-}
-
-@inreference{SuperdenseCoding2023,
-  title = {Superdense Coding},
-  booktitle = {Wikipedia},
-  date = {2023-02-15T16:56:53Z},
-  url = {https://en.wikipedia.org/w/index.php?title=Superdense_coding&oldid=1139537000},
-  urldate = {2023-04-28},
-  abstract = {In quantum information theory, superdense coding (also referred to as dense coding) is a quantum communication protocol to communicate a number of classical bits of information by only transmitting a smaller number of qubits, under the assumption of sender and receiver pre-sharing an entangled resource. In its simplest form, the protocol involves two parties, often referred to as Alice and Bob in this context, which share a pair of maximally entangled qubits, and allows Alice to transmit two bits (i.e., one of 00, 01, 10 or 11) to Bob by sending only one qubit. This protocol was first proposed by Charles H. Bennett and Stephen Wiesner in 1970 (though not published by them until 1992) and experimentally actualized in 1996 by Klaus Mattle, Harald Weinfurter, Paul G. Kwiat and Anton Zeilinger using entangled photon pairs. Superdense coding can be thought of as the opposite of quantum teleportation, in which one transfers one qubit from Alice to Bob by communicating two classical bits, as long as Alice and Bob have a pre-shared Bell pair.The transmission of two bits via a single qubit is made possible by the fact that Alice can choose among four quantum gate operations to perform on her share of the entangled state. Alice determines which operation to perform accordingly to the pair of bits she wants to transmit. She then sends Bob the qubit state evolved through the chosen gate. Said qubit thus encodes information about the two bits Alice used to select the operation, and this information can be retrieved by Bob thanks to pre-shared entanglement between them. After receiving Alice's qubit, operating on the pair and measuring both, Bob obtains two classical bits of information. It is worth stressing that if Alice and Bob do not pre-share entanglement, then the superdense protocol is impossible, as this would violate Holevo's theorem. Superdense coding is the underlying principle of secure quantum secret coding. The necessity of having both qubits to decode the information being sent eliminates the risk of eavesdroppers intercepting messages.},
-  langid = {english},
-  annotation = {Page Version ID: 1139537000},
-  file = {/Users/luka/Zotero/storage/JSJPIVBF/Superdense_coding.html}
-}
-
-@inreference{SuperdenseCoding2023a,
-  title = {Superdense Coding},
-  booktitle = {Wikipedia},
-  date = {2023-02-15T16:56:53Z},
-  url = {https://en.wikipedia.org/w/index.php?title=Superdense_coding&oldid=1139537000},
-  urldate = {2023-04-28},
-  abstract = {In quantum information theory, superdense coding (also referred to as dense coding) is a quantum communication protocol to communicate a number of classical bits of information by only transmitting a smaller number of qubits, under the assumption of sender and receiver pre-sharing an entangled resource. In its simplest form, the protocol involves two parties, often referred to as Alice and Bob in this context, which share a pair of maximally entangled qubits, and allows Alice to transmit two bits (i.e., one of 00, 01, 10 or 11) to Bob by sending only one qubit. This protocol was first proposed by Charles H. Bennett and Stephen Wiesner in 1970 (though not published by them until 1992) and experimentally actualized in 1996 by Klaus Mattle, Harald Weinfurter, Paul G. Kwiat and Anton Zeilinger using entangled photon pairs. Superdense coding can be thought of as the opposite of quantum teleportation, in which one transfers one qubit from Alice to Bob by communicating two classical bits, as long as Alice and Bob have a pre-shared Bell pair.The transmission of two bits via a single qubit is made possible by the fact that Alice can choose among four quantum gate operations to perform on her share of the entangled state. Alice determines which operation to perform accordingly to the pair of bits she wants to transmit. She then sends Bob the qubit state evolved through the chosen gate. Said qubit thus encodes information about the two bits Alice used to select the operation, and this information can be retrieved by Bob thanks to pre-shared entanglement between them. After receiving Alice's qubit, operating on the pair and measuring both, Bob obtains two classical bits of information. It is worth stressing that if Alice and Bob do not pre-share entanglement, then the superdense protocol is impossible, as this would violate Holevo's theorem. Superdense coding is the underlying principle of secure quantum secret coding. The necessity of having both qubits to decode the information being sent eliminates the risk of eavesdroppers intercepting messages.},
-  langid = {english},
-  annotation = {Page Version ID: 1139537000},
-  file = {/Users/luka/Zotero/storage/EYH5P8Y4/Superdense_coding.html}
 }
 
 @inreference{TachyonicAntitelephone2022,
