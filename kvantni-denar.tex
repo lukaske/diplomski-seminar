@@ -63,7 +63,7 @@
 
   
  \section{Uvod}
-	Zakaj imajo kovanci in papirnati bankovci v našem žepu kakršno koli vrednost? Kratek odgovor bi bil, da jim je vrednost in uporabo odredila zaupanja vredna institucija (npr. centralna banka po naročilu države) \emph{in hkrati} obstaja le omejena količina tako izdanih bankovcev in kovancev. Zaradi drugega pogoja je fizičen denar opremljen z različnimi varnostnimi elementi, ki močno otežujejo njihovo ponarejanje in varujejo vrednost valute. Ponarejanje v praksi je sicer \emph{težko}, vendar nas vedno zanimajo še boljše (in morda teoretično brezhibne) rešitve, ki se ne zanašanjo na otip papirja, hologramski, vodni, UV, infrardeči ter miniaturni tisk \cite{bankSecurityFeatures2018}.  V uporabi so tudi še bolj zanimive metode npr. digitalni filtri v orodjih kot so Adobe Photoshop in nekaterih tiskalnikih, ki onemogočajo procesiranje slik bankovcev \cite{SoftwareDetectionCurrency}. 
+	Zakaj imajo kovanci in papirnati bankovci v našem žepu kakršno koli vrednost? Kratek odgovor bi bil, da jim je vrednost in uporabo odredila zaupanja vredna institucija (npr. centralna banka po naročilu države) \emph{in hkrati} obstaja le omejena količina tako izdanih bankovcev in kovancev. Zaradi drugega pogoja je fizičen denar opremljen z različnimi varnostnimi elementi, ki močno otežujejo njihovo ponarejanje in varujejo vrednost valute. Ponarejanje v praksi je sicer \emph{težko}, vendar nas vedno zanimajo še boljše (in morda teoretično brezhibne) rešitve, ki se ne zanašajo na otip papirja, hologramski, vodni, UV, infrardeči ter miniaturni tisk \cite{bankSecurityFeatures2018}.  V uporabi so tudi še bolj zanimive metode npr. digitalni filtri v orodjih kot so Adobe Photoshop in nekaterih tiskalnikih, ki onemogočajo procesiranje slik bankovcev \cite{SoftwareDetectionCurrency}. 
 
 \subsection{Aktualne rešitve}
 	
@@ -125,7 +125,7 @@ kjer $\theta$ in $\varphi$ definirata (poljubno) točko na Blochovi sferi. Upora
 
 \subsection{Več kubitov in kvantna prepletenost}
 
-Stanja večih kubitov zapišemo kot tenzorski produkt. Za dva kubita: $| \psi \rangle_a = c_{a0} \, | 0 \rangle_a + c_{a1} \, | 1 \rangle_a$ in $| \psi \rangle_b = c_{b0} \, | 0 \rangle_b + c_{b1} \, | 1 \rangle_b$, tedaj velja
+Stanja večih kubitov zapišemo kot tenzorski produkt enokubitnih stanj. Za dva kubita: $| \psi \rangle_a = c_{a0} \, | 0 \rangle_a + c_{a1} \, | 1 \rangle_a$ in $| \psi \rangle_b = c_{b0} \, | 0 \rangle_b + c_{b1} \, | 1 \rangle_b$, tedaj velja
  
 \begin{equation} \label{eq1}
 \begin{split}
@@ -136,12 +136,12 @@ c_{01} \, | 0 \rangle_a \otimes | 1 \rangle_b + c_{10} \, | 1 \rangle_a \otimes 
  & =  c_{00} \, | 00 \rangle + c_{01} \, | 01 \rangle + c_{10} \, | 10 \rangle + c_{11} \, | 11 \rangle,
 \end{split}
 \end{equation}
-kjer smo na primer stanje $ | 0 \rangle_a \otimes | 1 \rangle_b $ zapisali kot $ | 01 \rangle $. Enako kot smo to storili z enim kubitom, lahko stanja dveh kubitov predstavimo z vektorjem: $ | 00 \rangle = [1,0,0,0]^T $, $ | 01 \rangle = [0,1,0,0]^T $, $ | 10 \rangle = [0,0,1,0]^T $ in $ | 11 \rangle = [0,0,0,1]^T $. Poljubno stanje dveh kubitov zapišemo kot $ | \zeta \rangle = [c_{00}, c_{01}, c_{10}, c_{11}]^T $. Notacijo lahko posplošimo na poljubno število bitov. \cite{pompeKvantniAlgoritmi2022}
+kjer smo na primer stanje $ | 0 \rangle_a \otimes | 1 \rangle_b $ zapisali kot $ | 01 \rangle $. Enako kot smo to storili z enim kubitom, lahko stanja dveh kubitov predstavimo z vektorjem: $ | 00 \rangle = [1,0,0,0]^T $, $ | 01 \rangle = [0,1,0,0]^T $, $ | 10 \rangle = [0,0,1,0]^T $ in $ | 11 \rangle = [0,0,0,1]^T $. Poljubno stanje dveh kubitov zapišemo kot $ | \zeta \rangle = [c_{00}, c_{01}, c_{10}, c_{11}]^T $. Notacijo lahko posplošimo na poljubno število kubitov. \cite{pompeKvantniAlgoritmiDiplomski2022}
 
 \par
 
-Poljubnega stanja dveh ali več kubitov v splošnem \emph{ne} moremo zapisati v produktni bazi kot $ | \Psi \rangle_{ab} = | \psi \rangle_a \, |\phi \rangle_b$. Torej za dane koeficiente $c_{00}$, $c_{01}$, $c_{10}$ in $c_{11}$ ne moremo določiti koeficientov $c_{a0}$, $c_{a1}$, $c_{b0}$ in $c_{b1}$. Takšnemu stanju pravimo, da je \emph{prepleteno}. \cite{pompeKvantniAlgoritmi2022}
-\par Sistem z $n$ kubiti ima $2^n$ možnih stanj, torej je stanje le-tega superpozicija $2^n$ lastnih stanj oziroma ima vektor stanja $2^n$ komponent. Ko izmerimo stanje sistema, kolapsiramo superpozicijo in izmerimo le eno od $2^n$ možnih stanj s točno določeno verjetnostjo. \cite{pompeKvantniAlgoritmi2022}
+Poljubnega stanja dveh ali več kubitov v splošnem \emph{ne} moremo zapisati kot produktno stanje $ | \Psi \rangle_{ab} = | \psi \rangle_a \, |\phi \rangle_b$. Torej za dane koeficiente $c_{00}$, $c_{01}$, $c_{10}$ in $c_{11}$ ne moremo določiti koeficientov $c_{a0}$, $c_{a1}$, $c_{b0}$ in $c_{b1}$. Takšnemu stanju pravimo, da je \emph{prepleteno}. \cite{pompeKvantniAlgoritmiDiplomski2022}
+\par Sistemu $n$ kubitov ustreza $2^n$  dimenzijski Hilbertov prostor, torej je stanje le-tega superpozicija $2^n$ baznih stanj. Ko izmerimo stanje sistema, kolapsiramo superpozicijo in izmerimo vse kubite hkrati. \cite{pompeKvantniAlgoritmiDiplomski2022}
 
 \subsubsection{Bellova stanja (pari EPR)}
 Štiri specifična dvokubitna stanja, ki so med seboj maksimalno prepletena, imenujemo Bellova. Med seboj so ortogonalna in tvorijo bazo štiridimenzionalnega Hilbertovega prostora za dva kubita. Štiri Bellova stanja so: $|\Phi ^{+}\rangle = {\displaystyle { {(2)^{-1/2}(|00\rangle +|11\rangle )}}} $, $|\Phi ^{-}\rangle = {\displaystyle { {(2)^{-1/2}(|00\rangle -|11\rangle )}}}$, $|\Psi ^{+}\rangle = {\displaystyle { {(2)^{-1/2}(|01\rangle +|10\rangle )}}}$ in $|\Psi ^{-}\rangle = {\displaystyle { {(2)^{-1/2}(|01\rangle -|10\rangle )}}}$. Rezultat meritve enega samega kubita v enem izmed Bellovih stanj je naključen, vendar z meritvijo prvega kubita določimo tudi stanje, ki ga bomo izmerili pri meritvi drugega. Velja, da bo rezultat druge meritve enak prvi za stanja $\Phi$ ali nasprotna prvi za stanja $\Psi$. To opažanje implicira, da sta rezultata meritev prvega in drugega kubita korelirana. Ime so dobila po Johnu Bellu, ki je prvi pokazal, da tako močne korelacije znotraj klasične fizike niso mogoče in da gre za pojave, ki jih lahko opazimo samo v svetu kvantne mehanike. \cite{BellState2023}
@@ -174,7 +174,7 @@ Levo                  & $ {\frac  {1}{{\sqrt  2}}}{(1, +i)^T} $ & $ { |L\rangle 
 
 \subsection{Izbira baze za meritev}
 
-\par Rezultat meritve polarzacije oz. spina je odvisen od izbire baze. Hkrati izbira meritvene baze predstavlja tudi teoretično osnovo za delovanje kvantnega denarja, zato vse skupaj fizikalno še malo bolje razložimo. Kot opisano v točki \ref{kubit}, je možno vsako stanje kubita reprezentirati s točko na Blochovi sferi kot prikazano na sliki \ref{fig:bloch}. 
+\par Rezultat meritve polarizacije oz. spina je odvisen od izbire baze. Hkrati izbira meritvene baze predstavlja tudi teoretično osnovo za delovanje kvantnega denarja, zato vse skupaj fizikalno še malo bolje razložimo. Kot opisano v točki \ref{kubit}, je možno vsako stanje kubita reprezentirati s točko na Blochovi sferi kot prikazano na sliki \ref{fig:bloch}. 
 
 \begin{figure}[H]
 \includegraphics[width=6cm]{bloch.png}
@@ -183,7 +183,7 @@ Levo                  & $ {\frac  {1}{{\sqrt  2}}}{(1, +i)^T} $ & $ { |L\rangle 
 \label{fig:bloch}
 \end{figure}
 
-V smeri $z$ definiramo stanji $| 0 \rangle$ in $| 1 \rangle$, ki predstavljata npr. spin dol in gor v smeri $z$. Vemo, da lahko spin merimo tudi v smeri $x$ in $y$, odvisno od orientacije Stern-Gerlachove naprave. Tedaj bi želeli zapisati tudi valovno funckcijo takšnega sistema. Pri tem si lahko pomagamo z enačbo \ref{blocheq} in vanjo vstavimo primerne kote $\theta$, $\varphi$ za bazo v smereh $x$, $y$ in $z$. Iz enačbe \ref{blocheq} tedaj dobimo 6 različnih normiranih valovnih funkcij (enačba \ref{eigenvectors}). Vemo, da ima spin dve lastni vrednosti, in sicer $\pm 1$. Tedaj so matrični operatorji, ki ustrezajo tem lastnim vrednostim in lastnim vektorjem, kar Paulijeve matrike $\sigma_x$, $\sigma_y$, $\sigma_z$. \cite{PauliMatrices2023}
+V smeri $z$ definiramo stanji $| 0 \rangle$ in $| 1 \rangle$, ki predstavljata npr. spin dol in gor v smeri $z$. Vemo, da lahko spin merimo tudi v smeri $x$ in $y$, odvisno od orientacije Stern-Gerlachove naprave. Tedaj bi želeli zapisati tudi valovno funkcijo takšnega sistema. Pri tem si lahko pomagamo z enačbo \ref{blocheq} in vanjo vstavimo primerne kote $\theta$, $\varphi$ za bazo v smereh $x$, $y$ in $z$. Iz enačbe \ref{blocheq} tedaj dobimo 6 različnih normiranih valovnih funkcij (enačba \ref{eigenvectors}). Vemo, da ima spin dve lastni vrednosti, in sicer $\pm 1$. Tedaj so matrični operatorji, ki ustrezajo tem lastnim vrednostim in lastnim vektorjem, kar Paulijeve matrike $\sigma_x$, $\sigma_y$, $\sigma_z$. \cite{PauliMatrices2023}
 
 \begin{equation}
 \label{eigenvectors}
@@ -242,7 +242,7 @@ kjer sta $t_0'$ in $t_1'$ časa oddaje in prejema signala merjena v $S'$ ter $c$
 \caption{Originalna shema komunikatorja FLASH. \cite{herbertFLASHSuperluminalCommunicator1982}}
 \label{fig:flash}
 \end{figure}
-\par Par prepletenih fotonov ustvarimo v dvofotonskem izviru in jih pošljemo v smeri dveh opazovalcev, npr. Alice in Bob. Stanje dveh fotnov je podano z
+\par Par prepletenih fotonov ustvarimo v dvofotonskem izviru in jih pošljemo v smeri dveh opazovalcev, npr. Alice in Bob. Stanje dveh fotonov je podano z
 \begin{equation}
 \frac{| HH \rangle + | VV \rangle}{\sqrt{2}},
 \end{equation}
@@ -326,11 +326,12 @@ Izrek o prepovedi kloniranja postavi kar nekaj omejitev za nastajajoče kvantne 
 
 \subsection{Delovanje sheme}
 
-Shemo kvantnega denarja je leta 1983 v svojem članku konceptualno opisal Stephen Wiesner \cite{wiesnerConjugateCoding1983}. Kot ilustrirano na sliki \ref{fig:qmoney}, je vsak bankovec opremljen s serijsko številko in nizom kvantnih sistemov dolžine $N$, ki jih pripravimo v določeni (verjetno naključni) konfiguraciji $| \$_i \rangle$, $1 \le i \le N$. Naloga izdajatelja takih bankovcev je, da za vsak kvantni bankovec na varnem mestu shrani slovar serijskih številk in pripadajočo konfiguracijo $| \$_i \rangle$ za $\forall \, i$ (skrivni ključ). Varnost sistema se skriva v tem, da ponarejevalec ne ve, v kateri bazi vrne meritev sistema $| \$_i \rangle$ enoličen rezultat. Torej bo pri meritvi lahko naredil napako in jo izvedel v napačni bazi. Napačno stanje kubita bo nato zapisal na ponarejeni bankovec, kar bo pri preverjanju v banki, ki zaporedje pravilno izbranih baz pozna, detektirano. Ker je na bankovcu $N$ kvantnih sistemov, verjetnost za popolno kopijo celotnega niza pada eksponentno z $P^N \rightarrow 0$. $P$ predstavlja verjetnost, da posamezen kubit na ponarejenem bankovcu pri preverjanju producira pravilen rezultat. Dodatno zahtevamo še $0 < P < 1$. Za preprost poskus ponarejanja, kjer ponarejevalec med ponarejanjem nima dostopa do validacije bankovca, je bilo leta 2012 v \cite{molinaOptimalCounterfeitingAttacks2012} pokazano, da za $P$ ustreza vrednost $(3/4)$.
+Shemo kvantnega denarja je leta 1983 v svojem članku konceptualno opisal Stephen Wiesner \cite{wiesnerConjugateCoding1983}. Kot ilustrirano na sliki \ref{fig:qmoney}, je vsak bankovec opremljen s serijsko številko in nizom kvantnih sistemov dolžine $N$, ki jih pripravimo v določeni (verjetno naključni) konfiguraciji $| \$_i \rangle$, $1 \le i \le N$. Naloga izdajatelja takih bankovcev je, da za vsak kvantni bankovec na varnem mestu shrani slovar serijskih številk in pripadajočo konfiguracijo $| \$_i \rangle$ za $\forall \, i$ (skrivni ključ). Varnost sistema se skriva v tem, da ponarejevalec ne ve, v kateri bazi vrne meritev sistema $| \$_i \rangle$ enoličen rezultat. Torej bo pri meritvi lahko naredil napako in jo izvedel v napačni bazi. Napačno stanje kubita bo nato zapisal na ponarejeni bankovec, kar bo pri preverjanju v banki, ki zaporedje pravilno izbranih baz pozna, detektirano. Ker je na bankovcu $N$ kvantnih sistemov, verjetnost za popolno kopijo celotnega niza pada eksponentno z $P^N \rightarrow 0$. $P$ predstavlja verjetnost, da posamezen kubit na ponarejenem bankovcu pri preverjanju producira pravilen rezultat. Dodatno zahtevamo še $0 < P < 1$. Za preprost poskus ponarejanja, kjer ponarejevalec med ponarejanjem nima dostopa do validacije bankovca, je bilo leta 2012 v \cite{molinaOptimalCounterfeitingAttacks2012} pokazano, da za $P$ ustreza vrednost $(3/4)$. Do te številke lahko za sistem z dvema meritvenima bazama intuitivno pridemo na sledeč način. Ponarejevalec lahko z verjetnostjo $(1/2)$ ugane pravo bazo. Velja pa tudi, da je verjetnost, da pri napačno izbrani bazi pravilno izmerimo lastno vrednost, enaka $(1/2)^2$. Sledi, da je $(1/2) + (1/2)^2 = (3/4)$.
+
 
 \subsection{Pomanjkljivosti in ranljivosti}
 
-Ena izmed poglavitnih težav Wiesnerjeve sheme kvantnega denarja je odvisnost od banke za preverjanje avtentičnosti bankovca. Banka mora biti vključena pri vsaki izmenjavi bankovca, saj bi z razkritjem skrivnih ključev na bankovcih padla celotna varnostna shema. Obstajata še dve pomanjkljivosti: relativno velika dolžina skrivnih ključev in ranljivost na interaktivne napade. V \cite{brodutchAdaptiveAttackWiesner2016} so leta 2016 namreč pokazali, da lahko samo z večkratno verifikacijo istega bankovca in metodo, ki bazira na kvantnem preizkuševanju (test za bombe Elitzurja in Vaidmana), uspešno ponaredijo bankovec. Kot edina rešitev se tukaj pokaže ponovna izdaja bankovca ob vsaki verifikaciji.
+Ena izmed poglavitnih težav Wiesnerjeve sheme kvantnega denarja je odvisnost od banke za preverjanje avtentičnosti bankovca. Banka mora biti vključena pri vsaki izmenjavi bankovca, saj bi z razkritjem skrivnih ključev na bankovcih padla celotna varnostna shema. Obstajata še dve pomanjkljivosti: relativno velika dolžina skrivnih ključev in ranljivost na interaktivne napade. V \cite{brodutchAdaptiveAttackWiesner2016} so leta 2016 namreč pokazali, da lahko samo z večkratno verifikacijo istega bankovca in metodo, ki bazira na kvantnem preizkušanju (test za bombe Elitzurja in Vaidmana), uspešno ponaredijo bankovec. Kot edina rešitev se tukaj pokaže ponovna izdaja bankovca ob vsaki verifikaciji.
 \par Zadnji napaki se da odpraviti, še vedno pa ostaja prva. Zato je glavni cilj nadaljnjih raziskav razvoj protokola t.i. kvantnega denarja z uporabo javnih ključev. Analogno s klasično simetrično kriptografijo, originalna Wiesnerjeva shema ustreza kvantnemu denarju z zasebnim ključem, saj lahko avtentičnost preveri le banka. Kvantni denar z javnim ključem pa bi analogno asimetrični klasični kriptografiji omogočal verifikacijo vsakomur. Ena izmed poglavitnih težav te nadgrajene sheme izvira že iz kvantnega denarja z zasebnimi ključi. Z večkratnim verificiranjem lahko ponarejevalec pridobi dodatne informacije o stanju kvantnega sistema, ki ga želi klonirati. V članku \cite{aaronsonQuantumMoneyHidden2012} avtorji predlagajo sistem kvantnega denarja z zasebnim ključem, ki omogoča neomejeno verifikacij in še vedno ostaja varen, kot tudi nov varen sistem kvantnega denarja z javnim ključem. 
 
 \subsection{Decentraliziran kvantni denar}
